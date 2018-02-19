@@ -1,4 +1,4 @@
-pragma solidity 0.4.19;
+pragma solidity 0.4.20;
 //import "github.com/willitscale/solidity-util/lib/Strings.sol";
 // import './Strings.sol';
 
@@ -8,7 +8,7 @@ contract IRMAScheme {
 
     struct IssuerPublicKey {
         uint id;
-        byte[] key;
+        bytes key;
     }
 
     struct Credential {
@@ -16,7 +16,7 @@ contract IRMAScheme {
 
         string id;
         string logoUrl;
-        byte[] issueSpec;
+        bytes issueSpec;
     }
 
     struct Issuer {
@@ -25,7 +25,7 @@ contract IRMAScheme {
         string id;
         string logoUrl;
         address owner;
-        byte[] metadata;
+        bytes metadata;
 
         mapping (uint => IssuerPublicKey) publicKeys;
         uint numPublicKeys;
@@ -53,7 +53,7 @@ contract IRMAScheme {
 
     function addIssuer( string _id,
                         string _logoUrl,
-                        byte[] _metadata) public returns (bool) {
+                        bytes _metadata) public returns (bool) {
         if (bytes(_id).length == 0) { //issuerId should be a non empty string
             return false;
         }
@@ -65,16 +65,16 @@ contract IRMAScheme {
         return true;
     }
 
-    function getIssuerById(string _id) public view returns (string, string, address, byte[], uint, uint) {
-        var issuer = issuers[_id];
+    function getIssuerById(string _id) public view returns (string, string, address, bytes, uint, uint) {
+        Issuer issuer = issuers[_id];
         if (issuer.exists) {
             return (issuer.id, issuer.logoUrl, issuer.owner,
                     issuer.metadata, issuer.numPublicKeys, issuer.credentialIds.length);
         }
     }
 
-    function addIssuerPublicKey(string _issuerId, byte[] _key) public returns (bool) {
-        var issuer = issuers[_issuerId];
+    function addIssuerPublicKey(string _issuerId, bytes _key) public returns (bool) {
+        Issuer issuer = issuers[_issuerId];
         if (!issuer.exists) { //issuer should exist
             return false;
         }
@@ -86,8 +86,8 @@ contract IRMAScheme {
         return true;
     }
 
-    function getIssuerPublicKeyById(string _issuerId, uint _keyIndex) public view returns (uint, byte[]) {
-        var issuer = issuers[_issuerId];
+    function getIssuerPublicKeyById(string _issuerId, uint _keyIndex) public view returns (uint, bytes) {
+        Issuer issuer = issuers[_issuerId];
         if (!issuer.exists) { //issuer should exist
             revert();
         }
@@ -99,8 +99,8 @@ contract IRMAScheme {
     }
 
     function addIssuerCredential(string _issuerId,
-                                string _credentialId, string _logoUrl, byte[] _issueSpec) public returns (bool) {
-        var issuer = issuers[_issuerId];
+                                string _credentialId, string _logoUrl, bytes _issueSpec) public returns (bool) {
+        Issuer issuer = issuers[_issuerId];
         if (!issuer.exists) { //issuer should exist
             return false;
         }
@@ -112,12 +112,12 @@ contract IRMAScheme {
         return true;
     }
 
-    function getIssuerCredentialById(string _issuerId, string _credId) public view returns (string, string, byte[]) {
-        var issuer = issuers[_issuerId];
+    function getIssuerCredentialById(string _issuerId, string _credId) public view returns (string, string, bytes) {
+        Issuer issuer = issuers[_issuerId];
         if (!issuer.exists) { //issuer should exist
             revert();
         }
-        var credential = issuer.credentials[_credId];
+        Credential credential = issuer.credentials[_credId];
         if (!credential.exists) { //credential should exist
             revert();
         }

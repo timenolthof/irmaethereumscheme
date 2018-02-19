@@ -9,10 +9,12 @@ import (
 	"irmaethereumscheme/contracts"
 	"irmaethereumscheme/proto"
 	"github.com/golang/protobuf/proto"
+	"github.com/ethereum/go-ethereum/common"
 )
 
 func main() {
-	fmt.Println("Creating scheme")
+	schemeContractAddress := common.HexToAddress("0x2F6f23c00Fc169b28B5c9b2985001e1e788520C7");
+	fmt.Printf("Adding issuer to scheme %s\n", schemeContractAddress)
 
 	const key = `{
       "address": "023e291a99d21c944a871adcc44561a58f99bdbc",
@@ -45,37 +47,37 @@ func main() {
 		log.Fatalf("Failed to create authorized transactor: %v", err)
 	}
 
-	metadata := &irmaproto.IRMASchemeMetadata{
-		Version: 7,
+	// Opening existing contract
+
+	contract, err := contracts.NewIRMAScheme(schemeContractAddress, client)
+	if err != nil {
+		log.Fatalf("could not load contract: %v", err)
+	}
+
+	// Composing metadata (proto)buffer
+
+	metadata := &irmaproto.IRMAIssuerMetadata{
+		Version: 4,
 		Id: "pbdf",
-		Url: "https://privacybydesign.foundation/schememanager/pbdf",
-		Name: []*irmaproto.IRMASchemeMetadata_LocalizedName{
+		Shortname: []*irmaproto.IRMAIssuerMetadata_LocalizedName{
+			{ Lang: "en", Name: "PbD.f" },
+			{ Lang: "nl", Name: "PbD.f" },
+		},
+		Name: []*irmaproto.IRMAIssuerMetadata_LocalizedName{
 			{ Lang: "en", Name: "Privacy by Design Foundation" },
 			{ Lang: "nl", Name: "Stichting Privacy by Design" },
 		},
-		Description: []*irmaproto.IRMASchemeMetadata_LocalizedDescription{
-			{
-				Lang: "en",
-				Name: "The Privacy by Design Foundation develops the IRMA app and the IRMA " +
-					"infrastructure, and issues basic attributes for free.",
-			},{
-				Lang: "nl",
-				Name: "De stichting Privacy by Design ontwikkelt de IRMA app en de IRMA" +
-					"infrastructuur, en geeft gratis een set basisattributen uit.",
-			},
-		},
-		Keyshareserver: "https://privacybydesign.foundation/tomcat/irma_keyshare_server/api/v1",
-		Keysharewebsite: "https://privacybydesign.foundation/mijnirma/",
-		Keyshareattribute: "pbdf.pbdf.mijnirma.email",
-		Contact: "https://privacybydesign.foundation/",
+		Schememanager: "pbdf",
+		Contactaddress: "",
+		Contactemail: "info@privacybydesign.foundation",
+		Baseurl: "",
 	}
 	metadataBuffer, err := proto.Marshal(metadata);
 	fmt.Printf("Size of metadata: %d, %d\n", len(metadataBuffer), cap(metadataBuffer));
 
-	// addr, _, contract, err := DeployGreeter(auth, sim, "DIVA is cool")
-	addr, _, _, err := contracts.DeployIRMAScheme(auth, client, "pbdf", metadataBuffer)
+	transaction, err := contract.AddIssuer(auth, "pbdf", "logo.png", metadataBuffer);
 	if err != nil {
-		log.Fatalf("could not deploy contract: %v", err)
+		log.Fatalf("could not add issuer to contract: %v", err)
 	}
-	fmt.Printf("Contract deployed to %s\n", addr.String())
+	log.Printf("Transaction cost %d gas\n", transaction.Gas())
 }
