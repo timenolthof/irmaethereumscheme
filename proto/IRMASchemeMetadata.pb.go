@@ -28,7 +28,7 @@ type IRMASchemeMetadata struct {
 func (m *IRMASchemeMetadata) Reset()                    { *m = IRMASchemeMetadata{} }
 func (m *IRMASchemeMetadata) String() string            { return proto.CompactTextString(m) }
 func (*IRMASchemeMetadata) ProtoMessage()               {}
-func (*IRMASchemeMetadata) Descriptor() ([]byte, []int) { return fileDescriptor1, []int{0} }
+func (*IRMASchemeMetadata) Descriptor() ([]byte, []int) { return fileDescriptor3, []int{0} }
 
 func (m *IRMASchemeMetadata) GetVersion() int32 {
 	if m != nil {
@@ -102,7 +102,7 @@ func (m *IRMASchemeMetadata_LocalizedName) Reset()         { *m = IRMASchemeMeta
 func (m *IRMASchemeMetadata_LocalizedName) String() string { return proto.CompactTextString(m) }
 func (*IRMASchemeMetadata_LocalizedName) ProtoMessage()    {}
 func (*IRMASchemeMetadata_LocalizedName) Descriptor() ([]byte, []int) {
-	return fileDescriptor1, []int{0, 0}
+	return fileDescriptor3, []int{0, 0}
 }
 
 func (m *IRMASchemeMetadata_LocalizedName) GetLang() string {
@@ -130,7 +130,7 @@ func (m *IRMASchemeMetadata_LocalizedDescription) Reset() {
 func (m *IRMASchemeMetadata_LocalizedDescription) String() string { return proto.CompactTextString(m) }
 func (*IRMASchemeMetadata_LocalizedDescription) ProtoMessage()    {}
 func (*IRMASchemeMetadata_LocalizedDescription) Descriptor() ([]byte, []int) {
-	return fileDescriptor1, []int{0, 1}
+	return fileDescriptor3, []int{0, 1}
 }
 
 func (m *IRMASchemeMetadata_LocalizedDescription) GetLang() string {
@@ -153,9 +153,9 @@ func init() {
 	proto.RegisterType((*IRMASchemeMetadata_LocalizedDescription)(nil), "irmaproto.IRMASchemeMetadata.LocalizedDescription")
 }
 
-func init() { proto.RegisterFile("IRMASchemeMetadata.proto", fileDescriptor1) }
+func init() { proto.RegisterFile("IRMASchemeMetadata.proto", fileDescriptor3) }
 
-var fileDescriptor1 = []byte{
+var fileDescriptor3 = []byte{
 	// 289 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x90, 0xbb, 0x4e, 0xf3, 0x40,
 	0x10, 0x85, 0xe5, 0x4b, 0x92, 0xdf, 0x13, 0xfd, 0x01, 0x46, 0x14, 0xab, 0x54, 0x16, 0x05, 0xb2,
