@@ -1,0 +1,27 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "grommet": "^1.10.1",
+    "grommet-css": "^1.6.0",
+    "history": "^4.7.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "^1.1.1",
+    "react-web3-network-status": "^1.0.0",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "web3": "^0.20.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
