@@ -14,9 +14,9 @@ package irmaproto;
 message IRMAIssuerPublicKey {
     int32 Counter = 1;
     int64 ExpiryDate = 2;
-    string N = 3;
-    string Z = 4;
-    string S = 5;
-    repeated string Bases = 6;
+    bytes N = 3;
+    bytes Z = 4;
+    bytes S = 5;
+    repeated bytes Bases = 6;
     int32 EpochLength = 7;
 }

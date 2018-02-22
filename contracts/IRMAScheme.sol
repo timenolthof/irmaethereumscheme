@@ -66,7 +66,7 @@ contract IRMAScheme {
     }
 
     function getIssuerById(string _id) public view returns (string, string, address, bytes, uint, uint) {
-        Issuer issuer = issuers[_id];
+        Issuer storage issuer = issuers[_id];
         if (issuer.exists) {
             return (issuer.id, issuer.logoUrl, issuer.owner,
                     issuer.metadata, issuer.numPublicKeys, issuer.credentialIds.length);
@@ -74,7 +74,7 @@ contract IRMAScheme {
     }
 
     function addIssuerPublicKey(string _issuerId, bytes _key) public returns (bool) {
-        Issuer issuer = issuers[_issuerId];
+        Issuer storage issuer = issuers[_issuerId];
         if (!issuer.exists) { //issuer should exist
             return false;
         }
@@ -87,20 +87,20 @@ contract IRMAScheme {
     }
 
     function getIssuerPublicKeyById(string _issuerId, uint _keyIndex) public view returns (uint, bytes) {
-        Issuer issuer = issuers[_issuerId];
+        Issuer storage issuer = issuers[_issuerId];
         if (!issuer.exists) { //issuer should exist
             revert();
         }
         if (_keyIndex >= issuer.numPublicKeys) { //key should exist
             revert();
         }
-        var key = issuer.publicKeys[_keyIndex];
+        IssuerPublicKey storage key = issuer.publicKeys[_keyIndex];
         return (key.id, key.key);
     }
 
     function addIssuerCredential(string _issuerId,
                                 string _credentialId, string _logoUrl, bytes _issueSpec) public returns (bool) {
-        Issuer issuer = issuers[_issuerId];
+        Issuer storage issuer = issuers[_issuerId];
         if (!issuer.exists) { //issuer should exist
             return false;
         }
@@ -113,11 +113,27 @@ contract IRMAScheme {
     }
 
     function getIssuerCredentialById(string _issuerId, string _credId) public view returns (string, string, bytes) {
-        Issuer issuer = issuers[_issuerId];
+        Issuer storage issuer = issuers[_issuerId];
         if (!issuer.exists) { //issuer should exist
             revert();
         }
-        Credential credential = issuer.credentials[_credId];
+        Credential storage credential = issuer.credentials[_credId];
+        if (!credential.exists) { //credential should exist
+            revert();
+        }
+        return (credential.id, credential.logoUrl, credential.issueSpec);
+    }
+
+    function getIssuerCredentialIdByCredentialIndex(string _issuerId, uint _credIndex) public view returns (string, string, bytes) {
+        Issuer storage issuer = issuers[_issuerId];
+        if (!issuer.exists) { //issuer should exist
+            revert();
+        }
+        if (_credIndex >= issuer.credentialIds.length) { //credentialId should exist
+            revert();
+        }
+        string storage _credId = issuer.credentialIds[_credIndex];
+        Credential storage credential = issuer.credentials[_credId];
         if (!credential.exists) { //credential should exist
             revert();
         }
