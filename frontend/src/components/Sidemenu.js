@@ -39,8 +39,8 @@ class Sidemenu extends Component {
           justify='start'>
           <Menu primary={true}>
             { this.props.schemes.map((scheme, index) =>
-              <Anchor key={index} onClick={() => this.props.selectScheme(index)}
-                className={index === this.props.selectedSchemeIndex ? 'active' : ''}>
+              <Anchor key={index} onClick={() => this.props.selectScheme(scheme)}
+                className={index === this.props.selectedSchemeId ? 'active' : ''}>
                 {scheme.id}
               </Anchor>
             )}
@@ -56,7 +56,7 @@ class Sidemenu extends Component {
 
 const mapStateToProps = state => ({
   schemes: state.schemes.schemes,
-  selectedSchemeIndex: state.schemes.selectedSchemeIndex,
+  selectedSchemeId: state.schemes.selectedSchemeId,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

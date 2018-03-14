@@ -1,19 +1,22 @@
 export const SELECT_SCHEME = 'schemes/SELECT_SCHEME';
 export const ADD_SCHEME = 'schemes/ADD_SCHEME';
+export const FETCH_SCHEME = 'schemes/FETCH_SCHEME';
+export const RECEIVE_SCHEME = 'schemes/RECEIVE_SCHEME';
 
 const initialState = {
   schemes: [
     {
-      id: 'test-ethereum1',
-      type: 'ethereum',
-      address: '0x0000',
+      id: 'pbdf',
+      type: 'github',
+      owner: 'privacybydesign',
+      repository: 'pbdf-schememanager',
     },{
       id: 'test-ethereum2',
       type: 'ethereum',
       address: '0x0001',
     },
   ],
-  selectedSchemeIndex: null,
+  selectedSchemeId: null,
 }
 
 export default (state = initialState, action) => {
@@ -21,7 +24,7 @@ export default (state = initialState, action) => {
     case SELECT_SCHEME:
       return {
         ...state,
-        selectedSchemeIndex: action.index,
+        selectedSchemeId: action.schemeId,
       }
 
     case ADD_SCHEME:
@@ -30,17 +33,32 @@ export default (state = initialState, action) => {
         schemes: state.schemes.push(action.scheme),
       }
 
+    case RECEIVE_SCHEME:
+      return {
+        ...state,
+        schemes: state.schemes.map(scheme => {
+          if (scheme.id === action.metadata.id) {
+            scheme.metadata = action.metadata;
+          }
+          return scheme;
+        }),
+      }
+
     default:
       return state;
   }
 }
 
-export const selectScheme = (index) => {
+export const selectScheme = (scheme) => {
   return dispatch => {
     dispatch({
       type: SELECT_SCHEME,
-      index
-    })
+      schemeId: scheme.id,
+    });
+    dispatch({
+      type: FETCH_SCHEME,
+      scheme,
+    });
   }
 }
 
@@ -49,6 +67,6 @@ export const addScheme = (scheme) => {
     dispatch({
       type: ADD_SCHEME,
       scheme
-    })
+    });
   }
 }
