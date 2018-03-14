@@ -1,5 +1,8 @@
 import 'babel-polyfill'
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux'
 
 import Sidebar from 'grommet/components/Sidebar';
 import Header from 'grommet/components/Header';
@@ -11,7 +14,17 @@ import Button from 'grommet/components/Button';
 import User from 'grommet/components/icons/base/User';
 import Footer from 'grommet/components/Footer';
 
+import {
+  selectScheme,
+  addScheme,
+} from '../reducer/schemes'
+
 class Sidemenu extends Component {
+  static propTypes = {
+    schemes: PropTypes.array.isRequired,
+    selectedSchemeIndex: PropTypes.number,
+  };
+
   render() {
     return (
       <Sidebar
@@ -25,16 +38,12 @@ class Sidemenu extends Component {
         <Box flex='grow'
           justify='start'>
           <Menu primary={true}>
-            <Anchor href='#'
-              className='active'>
-              First
-            </Anchor>
-            <Anchor href='#'>
-              Second
-            </Anchor>
-            <Anchor href='#'>
-              Third
-            </Anchor>
+            { this.props.schemes.map((scheme, index) =>
+              <Anchor key={index} onClick={() => this.props.selectScheme(index)}
+                className={index === this.props.selectedSchemeIndex ? 'active' : ''}>
+                {scheme.id}
+              </Anchor>
+            )}
           </Menu>
         </Box>
         <Footer pad='medium'>
@@ -45,4 +54,17 @@ class Sidemenu extends Component {
   }
 }
 
-export default Sidemenu;
+const mapStateToProps = state => ({
+  schemes: state.schemes.schemes,
+  selectedSchemeIndex: state.schemes.selectedSchemeIndex,
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  selectScheme,
+  addScheme,
+}, dispatch)
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Sidemenu);

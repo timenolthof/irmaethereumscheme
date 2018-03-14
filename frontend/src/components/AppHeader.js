@@ -1,6 +1,6 @@
 import 'babel-polyfill'
 import React, { Component } from 'react';
-import NetworkStatus from 'react-web3-network-status'
+// import NetworkStatus from 'react-web3-network-status'
 
 import Header from 'grommet/components/Header';
 import Title from 'grommet/components/Title';
@@ -21,7 +21,7 @@ class AppHeader extends Component {
           direction='row'
           responsive={false}>
 
-          <NetworkStatus />
+          {/* <NetworkStatus />*/}
           <Menu icon={<Actions />}
             dropAlign={{"right": "right"}}>
             <Anchor href='#'
