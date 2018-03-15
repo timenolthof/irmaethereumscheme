@@ -1,7 +1,12 @@
-import axios from 'axios';
-import parseXML from '../util/parse-xml';
+import {
+  FETCH_SCHEME,
+  RECEIVE_SCHEME,
+  DEPLOY_NEW_SCHEME,
+  ADD_SCHEME,
+} from '../reducer/schemes';
 
-import { FETCH_SCHEME, RECEIVE_SCHEME } from '../reducer/schemes';
+import { deployNewScheme, fetchEthereumScheme } from './ethereum-scheme-service';
+import { fetchGithubScheme } from './github-scheme-service';
 
 const dataService = store => dispatch => action => {
 
@@ -9,7 +14,33 @@ const dataService = store => dispatch => action => {
   switch (action.type) {
     case FETCH_SCHEME:
       const { scheme } = action;
-      fetchScheme(scheme, dispatch);
+      if (scheme.type === 'github') {
+        fetchGithubScheme(scheme.owner, scheme.repository)
+          .then((scheme) => {
+            dispatch({
+              type: RECEIVE_SCHEME,
+              metadata: scheme.metadata,
+              receivedAt: Date.now(),
+            });
+          });
+      } else {
+        fetchEthereumScheme(scheme.address);
+      }
+      break;
+
+    case DEPLOY_NEW_SCHEME:
+      const { schemeId, metadata } = action;
+      deployNewScheme(schemeId, metadata)
+        .then(deployedContract => {
+          dispatch({
+            type: ADD_SCHEME,
+            scheme: {
+              id: schemeId,
+              type: 'ethereum',
+              address: deployedContract.address,
+            },
+          });
+        });
       break;
 
     default:
@@ -17,31 +48,5 @@ const dataService = store => dispatch => action => {
   }
 
 };
-
-function fetchScheme(scheme, dispatch) {
-  if (scheme.type === 'github') {
-    return axios
-      .get(`https://raw.githubusercontent.com/${scheme.owner}/${scheme.repository}/master/description.xml`)
-      .then(response => response.data)
-      .then(parseXML)
-      .then(json => {
-        dispatch({
-          type: RECEIVE_SCHEME,
-          metadata: {
-            id: json.SchemeManager.Id[0],
-            version: json.SchemeManager.$.version,
-            contact: json.SchemeManager.Contact[0],
-            name: json.SchemeManager.Name[0],
-            description: json.SchemeManager.Description[0],
-            url: json.SchemeManager.Url[0],
-            keyshareAttribute: json.SchemeManager.KeyshareAttribute[0],
-            keyshareServer: json.SchemeManager.KeyshareServer[0],
-            keyshareWebsite: json.SchemeManager.KeyshareWebsite[0],
-          },
-          receivedAt: Date.now(),
-        })
-      });
-  }
-}
 
 export default dataService;

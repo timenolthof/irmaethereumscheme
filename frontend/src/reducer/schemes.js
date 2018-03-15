@@ -2,6 +2,7 @@ export const SELECT_SCHEME = 'schemes/SELECT_SCHEME';
 export const ADD_SCHEME = 'schemes/ADD_SCHEME';
 export const FETCH_SCHEME = 'schemes/FETCH_SCHEME';
 export const RECEIVE_SCHEME = 'schemes/RECEIVE_SCHEME';
+export const DEPLOY_NEW_SCHEME = 'schemes/DEPLOY_NEW_SCHEME';
 
 const initialState = {
   schemes: [
@@ -13,7 +14,7 @@ const initialState = {
     },{
       id: 'test-ethereum2',
       type: 'ethereum',
-      address: '0x0001',
+      address: '0x4a6011dca416323c0071584c83cd9701a8246a86',
     },
   ],
   selectedSchemeId: null,
@@ -28,9 +29,12 @@ export default (state = initialState, action) => {
       }
 
     case ADD_SCHEME:
+      console.log(state);
+      const newSchemes = state.schemes.slice();
+      newSchemes.push(action.scheme);
       return {
         ...state,
-        schemes: state.schemes.push(action.scheme),
+        schemes: newSchemes,
       }
 
     case RECEIVE_SCHEME:
@@ -67,6 +71,16 @@ export const addScheme = (scheme) => {
     dispatch({
       type: ADD_SCHEME,
       scheme
+    });
+  }
+}
+
+export const deployNewScheme = (schemeId, metadata) => {
+  return dispatch => {
+    dispatch({
+      type: DEPLOY_NEW_SCHEME,
+      schemeId,
+      metadata,
     });
   }
 }

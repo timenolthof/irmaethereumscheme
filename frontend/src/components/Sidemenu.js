@@ -45,9 +45,7 @@ class Sidemenu extends Component {
                 {scheme.id}
               </Anchor>
             )}
-            <Anchor key='new-scheme'>
-              <Link to="/new-scheme">New Scheme</Link>
-            </Anchor>
+            <Link to="/new-scheme">New Scheme</Link>
           </Menu>
         </Box>
         <Footer pad='medium'>
