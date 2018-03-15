@@ -18,7 +18,8 @@
     "react-web3-network-status": "^1.0.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "web3": "^0.20.5"
+    "solc": "^0.4.21",
+    "web3": "0.20.5"
   },
   "scripts": {
     "start": "react-scripts start",
