@@ -16,7 +16,7 @@ const dataService = store => dispatch => action => {
       const { scheme } = action;
       if (scheme.type === 'github') {
         fetchGithubScheme(scheme.owner, scheme.repository)
-          .then((scheme) => {
+          .then(scheme => {
             dispatch({
               type: RECEIVE_SCHEME,
               metadata: scheme.metadata,
@@ -24,7 +24,14 @@ const dataService = store => dispatch => action => {
             });
           });
       } else {
-        fetchEthereumScheme(scheme.address);
+        fetchEthereumScheme(scheme.address)
+          .then(scheme => {
+            dispatch({
+              type: RECEIVE_SCHEME,
+              metadata: scheme.metadata,
+              receivedAt: Date.now(),
+            })
+          });
       }
       break;
 
