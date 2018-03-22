@@ -8,6 +8,7 @@
     "grommet": "^1.10.1",
     "grommet-css": "^1.6.0",
     "history": "^4.7.2",
+    "protobufjs": "^6.8.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-native-xml2js": "^1.0.3",

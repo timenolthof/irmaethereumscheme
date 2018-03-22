@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	contractAddr := "0x7d6Ef8F20B86A4da628e9342A2A66b4f94CD1553";
+	contractAddr := "0x9c939f2ab2c3940e7d8747a8fde73330c7442a6c";
 	schemeContractAddress := common.HexToAddress(contractAddr);
 	fmt.Printf("Reading scheme %s\n", contractAddr)
 
@@ -32,6 +32,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("could not get metadata: %v", err);
 	}
+	fmt.Printf("Metadata: %+v\n", schemeMetadataBuffer)
 	schemeMetadata := &irmaproto.IRMASchemeMetadata{}
 	proto.Unmarshal(schemeMetadataBuffer, schemeMetadata)
 	fmt.Printf("Metadata: %+v\n", schemeMetadata)

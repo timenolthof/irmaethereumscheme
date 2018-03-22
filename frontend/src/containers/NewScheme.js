@@ -32,6 +32,7 @@ class NewScheme extends Component {
   handleSubmit(event) {
     const metadata = {
       version: 7,
+      id: this.state.formSchemeId,
     };
     this.props.deployNewScheme(this.state.formSchemeId, metadata);
     this.props.history.push('/');
@@ -52,8 +53,9 @@ class NewScheme extends Component {
           Scheme Id:<br/>
           <TextInput id='schemeId'
             placeHolder="scheme id"
-            value={this.state.formSchemeId} onChange={this.handleInputChange}
-            name='fSchemeId'/>
+            value={this.state.formSchemeId}
+            onDOMChange={this.handleInputChange.bind(this)}
+            name='formSchemeId'/>
           </FormFields>
           <Footer pad={{"vertical": "medium"}}>
             <Button label='Submit'

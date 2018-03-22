@@ -12,9 +12,9 @@ const initialState = {
       owner: 'privacybydesign',
       repository: 'pbdf-schememanager',
     },{
-      id: 'test-ethereum2',
+      id: 'ethereum-irma-scheme',
       type: 'ethereum',
-      address: '0x4a6011dca416323c0071584c83cd9701a8246a86',
+      address: '0x71e13ea1d4bb434a3846c28a2a329f3ae83cf7c9',
     },
   ],
   selectedSchemeId: null,

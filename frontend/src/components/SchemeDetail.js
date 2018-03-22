@@ -40,7 +40,7 @@ class SchemeDetail extends Component {
                     Name
                   </span>
                   <span className='secondary'>
-                    { scheme.metadata.name[lang][0] }
+                    { scheme.metadata.name[lang] }
                   </span>
                 </ListItem>
                 <ListItem justify='between'
@@ -49,7 +49,7 @@ class SchemeDetail extends Component {
                     Description
                   </span>
                   <span className='secondary'>
-                    { scheme.metadata.description[lang][0] }
+                    { scheme.metadata.description[lang] }
                   </span>
                 </ListItem>
                 <ListItem justify='between'
@@ -83,7 +83,7 @@ class SchemeDetail extends Component {
                     KeyshareAttribute
                   </span>
                   <span className='secondary'>
-                    { scheme.metadata.keyshareAttribute }
+                    { scheme.metadata.keyshareattribute }
                   </span>
                 </ListItem>
                 <ListItem justify='between'>
@@ -91,7 +91,7 @@ class SchemeDetail extends Component {
                     KeyshareServer
                   </span>
                   <span className='secondary'>
-                    { scheme.metadata.keyshareServer }
+                    { scheme.metadata.keyshareserver }
                   </span>
                 </ListItem>
                 <ListItem justify='between'>
@@ -99,7 +99,7 @@ class SchemeDetail extends Component {
                     keyshareWebsite
                   </span>
                   <span className='secondary'>
-                    { scheme.metadata.keyshareWebsite }
+                    { scheme.metadata.keysharewebsite }
                   </span>
                 </ListItem>
               </List>
