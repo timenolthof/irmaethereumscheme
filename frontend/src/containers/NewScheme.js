@@ -16,6 +16,7 @@ class NewScheme extends Component {
     super(props);
     this.state = {
       formSchemeId: 'new-ethereum-scheme',
+      formSchemeName: 'Awesome Scheme on Ethereum',
     };
   }
 
@@ -33,6 +34,10 @@ class NewScheme extends Component {
     const metadata = {
       version: 7,
       id: this.state.formSchemeId,
+      name: [{
+        lang: 'en',
+        name: this.state.formSchemeName
+      }]
     };
     this.props.deployNewScheme(this.state.formSchemeId, metadata);
     this.props.history.push('/');
@@ -53,9 +58,19 @@ class NewScheme extends Component {
           Scheme Id:<br/>
           <TextInput id='schemeId'
             placeHolder="scheme id"
+            style={{ width: '100%' }}
             value={this.state.formSchemeId}
             onDOMChange={this.handleInputChange.bind(this)}
-            name='formSchemeId'/>
+            name='formSchemeId'/><br/>
+
+          Scheme name:<br/>
+          <TextInput id='schemeName'
+            placeHolder="scheme name"
+            style={{ width: '100%' }}
+            value={this.state.formSchemeName}
+            onDOMChange={this.handleInputChange.bind(this)}
+            name='formSchemeName'/><br/>
+
           </FormFields>
           <Footer pad={{"vertical": "medium"}}>
             <Button label='Submit'

@@ -33,10 +33,7 @@ export const deployNewScheme = (schemeId, inputMetadata) => {
       version: inputMetadata.version,
       id: schemeId,
       url: 'http://ethereum-scheme.url',
-      name: [{
-        lang: 'en',
-        name: 'New Ethereum Scheme',
-      }],
+      name: inputMetadata.name,
       description: [{
         lang: 'en',
         name: 'An IRMA scheme hosted in an Ethereum Smart contract',
