@@ -341,7 +341,7 @@ Note: the CredentialSpecification data structure was not completely implemented 
 ### Tools and languages used
 
 - Ganache-cli [https://github.com/trufflesuite/ganache-cli](https://github.com/trufflesuite/ganache-cli) - to run a private testrpc Ethereum blockchain
-- geth [https://github.com/ethereum/go-ethereum/wiki/geth] - command line interface for local Ethereum node
+- geth [https://github.com/ethereum/go-ethereum/wiki/geth](https://github.com/ethereum/go-ethereum/wiki/geth) - command line interface for local Ethereum node
 - go-ethereum [https://github.com/ethereum/go-ethereum](https://github.com/ethereum/go-ethereum) - Ethereum bindings for Golang
 - irmago [https://github.com/privacybydesign/irmago](https://github.com/privacybydesign/irmago) - For integration of IRMA with applications, and integration of the Ethereum IRMA scheme with IRMA
 - web3 [https://github.com/ethereum/web3.js/](https://github.com/ethereum/web3.js/) - JavaScript library for communicating with Ethereum
@@ -349,7 +349,7 @@ Note: the CredentialSpecification data structure was not completely implemented 
 
 ### Frontend
 
-The project contains a very simple (frontend)[https://github.com/timenolthof/irmaethereumscheme/tree/master/frontend] that can be used to create new IRMA schemes on Ethereum, and read IRMA scheme data from Github or Ethereum. It is included for demo purposes only.
+The project contains a very simple [frontend](https://github.com/timenolthof/irmaethereumscheme/tree/master/frontend) that can be used to create new IRMA schemes on Ethereum, and read IRMA scheme data from Github or Ethereum. It is included for demo purposes only.
 
 ### Integration in irmago
 
