@@ -349,7 +349,7 @@ Note: the CredentialSpecification data structure was not completely implemented 
 
 ### Frontend
 
-The project contains a very simple (frontend)[frontend] that can be used to create new IRMA schemes on Ethereum, and read IRMA scheme data from Github or Ethereum. It is included for demo purposes only.
+The project contains a very simple (frontend)[https://github.com/timenolthof/irmaethereumscheme/tree/master/frontend] that can be used to create new IRMA schemes on Ethereum, and read IRMA scheme data from Github or Ethereum. It is included for demo purposes only.
 
 ### Integration in irmago
 
@@ -411,7 +411,7 @@ Note: irmago parses the entire file based scheme on startup. As the scheme(s) gr
 - A possible workaround for the problems related to the size and data stored on Ethereum and the derived high transaction costs are methods in which parts of the data are not stored on the Ethereum chain, but in other systems, on side chains, or on different kinds of p2p systems (like IPFS) that might better fit the IRMA case. These systems also have drawbacks, for example the incentive for nodes to keep the network 'up' and data 'available' is less well developed in pure data storage systems like IPFS than it is in smart contract systems like Ethereum.
 - A solution that was already implemented in this prototype, is storing data in a non-native format (in this case protobuffs). This works, but introduces an additional layer of complexity into the system. Another downside is that is makes the contract data unreadable without the right specification for interpretation of the contract data.
 
-**Further work***
+**Further work**
 
 - It would be good to use the DID specification for IRMA schemes (and issuers), so that schemes from different sources can be uniquely identified regardless of their source.
 - Compare the current implementation on Ethereum with possible implementations using other technologies for decentralization, such as IOTA or IPFS.
