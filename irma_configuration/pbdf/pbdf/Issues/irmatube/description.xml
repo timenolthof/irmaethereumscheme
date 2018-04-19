@@ -1,0 +1,41 @@
+<IssueSpecification version="4">
+	<Name>
+		<en>IRMATube membership</en>
+		<nl>IRMATube lidmaadschap</nl>
+	</Name>
+	<ShortName>
+		<en>IRMATube</en>
+		<nl>IRMATube</nl>
+	</ShortName>
+	<SchemeManager>pbdf</SchemeManager>
+	<IssuerID>pbdf</IssuerID>
+	<CredentialID>irmatube</CredentialID>
+	<Description>
+		<en>Your IRMATube membership credential</en>
+		<nl>Uw IRMATube lidmaatschapscredential</nl>
+	</Description>
+	<ShouldBeSingleton>true</ShouldBeSingleton>
+
+	<Attributes>
+		<Attribute id="type">
+			<Name>
+				<en>Type</en>
+				<nl>Type</nl>
+			</Name>
+			<Description>
+				<en>Your membership type</en>
+				<nl>Uw lidmaatschap-type</nl>
+			</Description>
+		</Attribute>
+		<Attribute id="id">
+			<Name>
+				<en>ID</en>
+				<nl>ID</nl>
+			</Name>
+			<Description>
+				<en>Your membership ID</en>
+				<nl>Uw lidmaatschapsnummer</nl>
+			</Description>
+		</Attribute>
+	</Attributes>
+</IssueSpecification>

@@ -1,0 +1,61 @@
+<IssueSpecification version="4">
+	<Name>
+		<en>BIG registration</en>
+		<nl>BIG-registratie</nl>
+	</Name>
+	<ShortName>
+		<en>BIG</en>
+		<nl>BIG</nl>
+	</ShortName>
+	<SchemeManager>pbdf</SchemeManager>
+	<IssuerID>pbdf</IssuerID>
+	<CredentialID>big</CredentialID>
+	<Description>
+		<en>BIG attributes from the BIG registration.</en>
+		<nl>BIG-attributen uit het BIG-register.</nl>
+	</Description>
+	<ShouldBeSingleton>false</ShouldBeSingleton>
+
+	<Attributes>
+		<Attribute id="bignumber">
+			<Name>
+				<en>BIG number</en>
+				<nl>BIG nummer</nl>
+			</Name>
+			<Description>
+				<en>Your BIG code</en>
+				<nl>Uw BIG-nummer</nl>
+			</Description>
+		</Attribute>
+		<Attribute id="startdate">
+			<Name>
+				<en>Start date</en>
+				<nl>Startdatum</nl>
+			</Name>
+			<Description>
+				<en>Start date of this registration</en>
+				<nl>Startdatum van uw registratie</nl>
+			</Description>
+		</Attribute>
+		<Attribute id="profession">
+			<Name>
+				<en>Profession</en>
+				<nl>Beroep</nl>
+			</Name>
+			<Description>
+				<en>The profession you have</en>
+				<nl>Uw beroep</nl>
+			</Description>
+		</Attribute>
+		<Attribute id="specialism">
+			<Name>
+				<en>Specialism</en>
+				<nl>Specialisme</nl>
+			</Name>
+			<Description>
+				<en>The specialty you have as part of your profession</en>
+				<nl>De specialisatie binnen uw beroep</nl>
+			</Description>
+		</Attribute>
+	</Attributes>
+</IssueSpecification>
