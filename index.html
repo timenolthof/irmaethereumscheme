@@ -7,10 +7,13 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/alliander.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!--  Font Awesome -->
+		<link rel="stylesheet" href="lib/css/fontawesome-all.min.css" >
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -24,8 +27,521 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<div class="panel" style="top: 200px; left: 300px;">
+							<h1 class="green-box">
+								DIVA:<br/> Veilig inloggen met attributen
+							</h1>
+							<h2 class="green-box-subtitle">
+								Next Generation Identity Management met IRMA
+							</h2>
+						</div>
+						<div class="sidepanel">
+							<u>Team DIVA</u><br/>
+							Koen van Ingen<br/>
+							Timen Olthof<br/>
+							<br/>
+							<u>Meelezer:</u><br/>
+							Dirk Bollen<br/>
+							<br/>
+							<u>Opdrachtgever:</u><br/>
+							Tim Vermeulen<br/>
+						</div>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							Wie zijn wij?
+						</h2>
+					</div>
+					<div class="layer centered" style="">
+						<div>
+							<img src="images/2-timen.png"/><br/>
+							<br/>
+							Timen Olthof<br/>
+							Alliander New Business & R&D
+						</div>
+						<div>
+							<img src="images/2-koen.png"/><br/>
+							<br/>
+							Koen van Ingen<br/>
+							Alliander New Business & R&D
+						</div>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							Identity Management is moeilijk
+						</h2>
+					</div>
+					<div class="layer">
+						<img class="panel" style="top: 200px; left: 300px; width: 900px;" src="images/3-google-login.png"/>
+						<img class="fragment panel" style="top: 200px; left: 1500px; width: 1200px;" src="images/3-alliander-login.png"/>
+						<img class="fragment panel" style="top: 860px; left: 800px; width: 900px;" src="images/3-digid-login.png"/>
+						<img class="fragment panel" style="top: 860px; left: 1800px; width: 800px;" src="images/3-github-login.png"/>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							Een alternatief...
+						</h2>
+					</div>
+					<div class="layer centered">
+						<img src="images/4-fb-google-login.png" style="width: 30%;"/>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer centered">
+						<img src="images/5-oauth-logo.png" style="width: 900px;"/>
+						<img src="images/5-openid-logo.png" style="width: 800px;"/>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer centered">
+						<img src="images/6-oauth-protocol.png" style="width: 1800px;"/>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							Google weet precies waar je inlogt...
+						</h2>
+					</div>
+					<div class="layer centered">
+						<img src="images/7-google-tracking.png" style="width: 1400px;"/>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<h2 class="slide-title">
+						...en is single point of failure
+					</h2>
+					<section>
+						<div class="layer">
+							<img class="panel" style="top: 300px; left: 1300px; width: 1300px;" src="images/8-hacked.png"/>
+							<div class="panel" style="left: 300px; top: 300px;">
+								<ul>
+									<li><b>Doelwit voor hackers</b></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="layer">
+							<img class="panel" style="top: 300px; left: 1600px; width: 1100px;" src="images/9-ddos.png"/>
+							<div class="panel" style="left: 300px; top: 300px;">
+								<ul>
+									<li>Doelwit voor hackers</li>
+									<li><b>Doelwit voor denial of service attacks</b></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="layer">
+							<img class="panel" style="top: 300px; left: 1500px; width: 900px;" src="images/10-profiling.png"/>
+							<div class="panel" style="left: 300px; top: 300px;">
+								<ul>
+									<li>Doelwit voor hackers</li>
+									<li>Doelwit voor denial of service attacks</li>
+									<li><b>Linkability / profiling</b></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="layer">
+							<img class="panel" style="top: 500px; left: 1200px; width: 1400px;" src="images/11-cryptography.png"/>
+							<div class="panel" style="left: 300px; top: 300px;">
+								<ul>
+									<li>Doelwit voor hackers</li>
+									<li>Doelwit voor denial of service attacks</li>
+									<li>Linkability / profiling</li>
+									<li><b>OAuth bevat geen (serieuze) cryptografie</b></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							Kan dat niet beter?
+						</h2>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							Dat kan beter!
+						</h2>
+					</div>
+					<div class="layer centered">
+						<img src="images/13-irma-logo.png" style="width: 1400px;"/>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer centered">
+						<img src="images/14-irma-app-attributes.png" style="width: 800px;"/>
+
+						<img class="panel" style="top: 960px; left: 2236px; width: 490px;" src="images/14-app-store-logo.png"/>
+						<img class="panel" style="top: 1160px; left: 2200px; width: 560px;" src="images/14-play-store-logo.png"/>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							IRMA protocol
+						</h2>
+					</div>
+					<div class="layer centered">
+						<h3 class="panel" style="top: 300px; left: 700px;">Uitgifte</h3>
+						<img src="images/15-irma-issuing.png" style="width: 30%;"/>
+						<img src="images/15-divider.png" style=""/>
+						<h3 class="panel" style="top: 300px; left: 2100px;">Gebruik</h3>
+						<img src="images/15-irma-verifying.png" style="width: 30%;"/>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							Vergelijking OAuth en IRMA (Functioneel)
+						</h2>
+					</div>
+					<div class="layer centered">
+						<table class="alliander-table" style="font-size: 180%;">
+							<tr>
+								<th>&nbsp;</th>
+								<th class="center">OAuth</th>
+								<th class="center">IRMA</th>
+							</tr>
+							<tr class="odd">
+								<td>Gebruiker in control (SSI)</td>
+								<td class="center">
+									<i class="fas fa-times"></i>
+								</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+							</tr>
+							<tr class="even">
+								<td>Gevalideerde gebruikers</td>
+								<td class="center">
+									<i class="fas fa-times"></i>
+								</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+							</tr>
+							<tr class="odd">
+								<td>Groot marktaandeel</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+								<td class="center">
+									<i class="fas fa-times"></i>
+								</td>
+							</tr>
+							<tr class="even">
+								<td>Meer ervaring met implementatie</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+								<td class="center">
+									<i class="fas fa-times"></i>
+								</td>
+							</tr>
+							<tr class="odd">
+								<td>Één login voor applicaties</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+							</tr>
+							<tr class="even">
+								<td>Inloggen met mobiele telefoon</td>
+								<td class="center">
+									<i class="fas fa-times"></i>
+								</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							Vergelijking OAuth en IRMA (Technisch)
+						</h2>
+					</div>
+					<div class="layer centered">
+						<table class="alliander-table" style="font-size: 180%;">
+							<tr>
+								<th>&nbsp;</th>
+								<th class="center">OAuth</th>
+								<th class="center">IRMA</th>
+							</tr>
+							<tr class="odd">
+								<td>Securityhostpot opgelost?</td>
+								<td class="center">
+									<i class="fas fa-times"></i>
+								</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+							</tr>
+							<tr class="even">
+								<td>Geen linkability</td>
+								<td class="center">
+									<i class="fas fa-times"></i>
+								</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+							</tr>
+							<tr class="odd">
+								<td>App/telefoon blokkeren</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+							</tr>
+							<tr class="even">
+								<td>Attributen intrekken</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+							</tr>
+							<tr class="odd">
+								<td>Privacy by Design</td>
+								<td class="center">
+									<i class="fas fa-times"></i>
+								</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+							</tr>
+							<tr class="even">
+								<td>State of the art cryptography</td>
+								<td class="center">
+									<i class="fas fa-times"></i>
+								</td>
+								<td class="center">
+									<i class="fas fa-check"></i>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer centered text-alliander-orange" style="font-size: 600%">
+						Demo time!
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							DIVA SDK en referentie-implementatie
+						</h2>
+					</div>
+					<div class="layer centered">
+						<a href="https://dev-diva-js-reference-3p.appx.cloud/my-account" target="_blank">
+							<img src="images/19-diva-sdk.png" style="width: 2000px;"/>
+						</a>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							Zelf aan de slag met IRMA
+						</h2>
+					</div>
+					<div class="layer centered">
+						<img src="images/20-production-attributes.png" style="width: 30%;"/>
+
+						<img src="images/20-get-on-github.png" style="width: 30%;"/>
+						<h3 class="panel" style="top: 1000px; left: 1700px;">https://github.com/Alliander/diva-irma-js</h3>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							Waarvoor kan dit worden ingezet?
+						</h2>
+					</div>
+					<div class="layer centered fragment current-visible">
+						<img src="images/22-mijn-liander.png" style="width: 2000px;"/>
+					</div>
+					<div class="layer centered fragment current-visible">
+						<img src="images/23-alliander-login.png" style="width: 2000px;"/>
+					</div>
+					<div class="layer centered fragment current-visible">
+						<img src="images/24-toestemming-geven.png" style="width: 2000px;"/>
+					</div>
+					<div class="layer centered fragment current-visible">
+						<img src="images/25-irma-pluggable-identity-management.png" style="width: 2000px;"/>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							Volgende stappen
+						</h2>
+					</div>
+					<div class="layer">
+						<div class="panel" style="top:200px; left: 300px;">
+							<ul>
+								<li>Wij willen bijdragen aan een veiligere wereld en deze oplossing op meer plekken toepassen</li>
+								<li>Welke projecten heb jij waar we dit kunnen toepassen of uitproberen?</li>
+								<li>We komen graag vertellen over deze moderne security oplossing(en)!</li>
+							</ul>
+						</div>
+						<img class="panel" src="images/26-we-want-to-help.png" style="bottom: 200px; left: 860px; width: 1000px;"/>
+					</div>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<section>
+						<div class="layer">
+							<div class="panel" style="top: 200px; left: 300px;">
+								<h1 class="green-box">
+									Extra: Digitale<br/> Handtekeningen
+								</h1>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="layer">
+							<h2 class="slide-title">
+								Digitale handtekeningen
+							</h2>
+						</div>
+						<div class="layer centered">
+							<img src="images/28-document.png" style="width: 1400px;"/>
+							<div class="panel fragment" style="top: 700px; left: 1050px; width: 800px; font-size: 160%;">ODA portal mag mijn<br/> P4 energiedata<br/> opvragen</div>
+						</div>
+						<div class="layer centered fragment current-visible">
+							<img class="panel" style="top: 910px; left: 1280px; width: 500px;" src="images/30-natte-handtekening.png"/>
+						</div>
+						<div class="layer centered fragment current-visible">
+							<img class="panel" style="top: 1150px; left: 1650px; width: 300px;" src="images/31-sealed.png"/>
+							<div class="panel" style="top: 1200px; left: 1950px; width: 800px; font-size: 160%; text-align: left;">
+								0x01 0xff 0x12 0x63<br/>
+								0x87 0x52 0xab 0xdc
+							</div>
+						</div>
+						<div class="layer centered fragment current-visible">
+							<img class="panel" style="top: 1150px; left: 1650px; width: 300px;" src="images/13-irma-logo.png"/>
+							<div class="panel" style="top: 1200px; left: 1950px; width: 800px; font-size: 160%; text-align: left;">
+								<b>Naam</b>: Al Liander<br/>
+								<b>Woonplaats</b> Arnhem<br/>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="layer">
+							<h2 class="slide-title">
+								Integratie in online portal
+							</h2>
+						</div>
+						<div class="layer centered">
+							<img src="images/33-browser.png" style="width: 1400px;"/>
+						</div>
+						<div class="layer centered">
+							<img src="images/28-document.png" style="width: 700px;"/>
+						</div>
+						<div class="layer">
+							<img class="panel" src="images/13-irma-logo.png" style="top: 950px; left: 1500px; width: 200px;"/>
+						</div>
+					</section>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<section>
+						<div class="layer">
+							<div class="panel" style="top: 200px; left: 300px;">
+								<h1 class="green-box">
+									Extra: Technische<br/> Details
+								</h1>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="layer">
+							<h2 class="slide-title">
+								DIVA en IRMA componenten
+							</h2>
+						</div>
+						<div class="layer centered">
+							<img src="images/35-diva-architecture.png" style="width: 1800px;"/>
+						</div>
+					</section>
+				</section>
+
+				<section data-background-image="images/background-nebmrd.png"
+				data-background-size="contain">
+					<div class="layer">
+						<h2 class="slide-title">
+							Thanks
+						</h2>
+					</div>
+					<div class="layer centered">
+						Icons: https://thenounproject.com/
+					</div>
+				</section>
+
 			</div>
 		</div>
 
@@ -37,6 +553,11 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				slideNumber: true,
+				transition: 'convex',
+				width: 2880,
+				height: 1620,
+				center: false,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },

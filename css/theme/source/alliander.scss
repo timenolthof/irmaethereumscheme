@@ -1,0 +1,158 @@
+/**
+ * Alliander theme for reveal.js.
+ *
+ * By Timen Olthof
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+
+$mainColor: #222;
+$headingColor: #222;
+
+// Alliander colors
+$allianderOrange: #E95B0C;
+$allianderRed: #AF211F;
+$allianderGreen: #7DB339;
+$allianderDarkGreen: #6EB02D;
+
+$mainFontSize: 42px;
+$mainFont: 'Arial', Helvetica, sans-serif;
+$headingFont: 'Arial', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: normal;
+$headingFontWeight: 600;
+$linkColor: #2a76dd;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+.alliander-table {
+	th {
+		background-color: $allianderDarkGreen;
+		color: white;
+	}
+
+	tr.odd {
+		background-color: lighten( $allianderGreen, 35% );
+	}
+
+	tr.even {
+		background-color: lighten( $allianderGreen, 45% );
+	}
+
+	.fa-check {
+		color: green;
+	}
+	.fa-times {
+		color: red;
+	}
+	.center {
+		text-align: center;
+	}
+}
+
+.text-alliander-orange {
+	color: $allianderOrange;
+}
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+section {
+	top: 0px;
+	bottom: 0px;
+}
+
+.reveal h1.green-box {
+	background-color: $allianderGreen;
+	min-width: 1400px;
+	padding: 40px;
+	border-radius: 40px;
+	border-top-left-radius: 0px;
+	color: white;
+	text-align: left;
+}
+
+.reveal h2.green-box-subtitle {
+	font-weight: normal;
+}
+
+.reveal .sidepanel {
+	display: block;
+	position: absolute;
+	top: 400px;
+	right: 50px;
+	text-align: left;
+	font-size: 120%;
+	line-height: 160%;
+}
+
+.reveal .panel {
+	display: block;
+	position: absolute;
+}
+
+.reveal h2.slide-title {
+	color: $allianderOrange;
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 300px;
+	right: 460px;
+	text-align: left;
+	font-weight: normal;
+	font-size: 200%;
+}
+
+.layer {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+}
+
+.layer.centered {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.panel ul {
+	font-size: 150%;
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+// Global overrides
+.reveal section img {
+	background:none;
+	border:none;
+	box-shadow:none;
+}
+
+.reveal table th, .reveal table td {
+	border-bottom: none;
+}
