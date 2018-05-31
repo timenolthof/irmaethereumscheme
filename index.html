@@ -1,584 +1,449 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>IRMA signatures: sign-by-QR and sign-by-mail</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/alliander.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/alliander.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!--  Font Awesome -->
-		<link rel="stylesheet" href="lib/css/fontawesome-all.min.css" >
+    <!--  Font Awesome -->
+    <link rel="stylesheet" href="lib/css/fontawesome-all.min.css" >
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<div class="panel" style="top: 200px; left: 300px;">
-							<h1 class="green-box">
-								DIVA:<br/> Veilig inloggen met attributen
-							</h1>
-							<h2 class="green-box-subtitle">
-								Next Generation Identity Management met IRMA
-							</h2>
-						</div>
-						<div class="sidepanel">
-							<u>Team DIVA</u><br/>
-							Koen van Ingen<br/>
-							Timen Olthof<br/>
-							<br/>
-							<u>Meelezer:</u><br/>
-							Dirk Bollen<br/>
-							<br/>
-							<u>Opdrachtgever:</u><br/>
-							Tim Vermeulen<br/>
-						</div>
-					</div>
-				</section>
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <div class="panel" style="top: 200px; left: 300px;">
+              <h1 class="green-box">
+                IRMA signatures:<br /> sign-by-QR and sign-by-mail
+              </h1>
+              <h2 class="green-box-subtitle">
+                Use your IRMA attributes to sign contracts and statements
+              </h2>
+            </div>
+            <div class="sidepanel">
+              Koen van Ingen<br/>
+              <br/>
+            </div>
+          </div>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							Wie zijn wij?
-						</h2>
-					</div>
-					<div class="layer centered" style="">
-						<div>
-							<img src="images/2-timen.png"/><br/>
-							<br/>
-							Timen Olthof<br/>
-							Alliander New Business & R&D
-						</div>
-						<div>
-							<img src="images/2-koen.png"/><br/>
-							<br/>
-							Koen van Ingen<br/>
-							Alliander New Business & R&D
-						</div>
-					</div>
-				</section>
+          <aside class="notes">
+          </aside>
+        </section>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							Identity Management is moeilijk
-						</h2>
-					</div>
-					<div class="layer">
-						<img class="panel" style="top: 200px; left: 300px; width: 900px;" src="images/3-google-login.png"/>
-						<img class="fragment panel" style="top: 200px; left: 1500px; width: 1200px;" src="images/3-alliander-login.png"/>
-						<img class="fragment panel" style="top: 860px; left: 800px; width: 900px;" src="images/3-digid-login.png"/>
-						<img class="fragment panel" style="top: 860px; left: 1800px; width: 800px;" src="images/3-github-login.png"/>
-					</div>
-				</section>
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Who am I?
+            </h2>
+          </div>
+          <div class="layer centered" style="">
+            <div>
+              <img src="images/2-koen.png" style="width: 500px;" /><br/>
+              <br/>
+              Koen van Ingen<br/>
+              Alliander New Business & R&D
+            </div>
+          </div>
 
-				<section data-menu-title="Single Sign On" data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							Een alternatief...
-						</h2>
-					</div>
-					<div class="layer centered">
-						<img src="images/4-fb-google-login.png" style="width: 30%;"/>
-					</div>
-				</section>
+          <aside class="notes">
+            I'm working at Alliander<br />
+            - power grid operator (nothing to do with power production<br />
+          </aside>
+        </section>
+        
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA and Alliander?
+            </h2>
+          </div>
+          <div class="layer centered">
+            <img src="images/before-energietransitie.png" style="width: 1200px;"/>
+            <!-- https://www.renewableenergyworld.com/content/dam/rew/migrated/assets/images/story/2015/2/18/feature-0-1424284386014.png -->
+          </div>
 
-				<section data-menu-title="OAuth & OpenID" data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer centered">
-						<img src="images/5-oauth-logo.png" style="width: 900px;"/>
-						<img src="images/5-openid-logo.png" style="width: 800px;"/>
-					</div>
-				</section>
+          <aside class="notes">
+            <br />
+            Energy transition:<br />
+            - More local and dynamic production of energy<br />
+            - You can 'sell' your energy, variable energy price<br />
+            - WHO is using energy will be more important<br />
+            - Permission/Consent to use energy data is important<br />
+            - IRMA would be a nice solution!
+          </aside>
+        </section>
 
-				<section data-menu-title="OAuth Protocol" data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer centered">
-						<img src="images/6-oauth-protocol.png" style="width: 1800px;"/>
-					</div>
-				</section>
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA and Alliander?
+            </h2>
+          </div>
+          <div class="layer centered">
+            <img src="images/energietransitie.png" style="width: 1200px;"/>
+            <!-- https://www.renewableenergyworld.com/content/dam/rew/migrated/assets/images/story/2015/2/18/feature-0-1424284386014.png -->
+          </div>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							Google weet precies waar je inlogt...
-						</h2>
-					</div>
-					<div class="layer centered">
-						<img src="images/7-google-tracking.png" style="width: 1400px;"/>
-					</div>
-				</section>
+          <aside class="notes">
+            <br />
+            Energy transition:<br />
+            - More local and dynamic production of energy<br />
+            - You can 'sell' your energy, variable energy price<br />
+            - WHO is using energy will be more important<br />
+            - Permission/Consent to use energy data is important<br />
+            - IRMA would be a nice solution!
+          </aside>
+        </section>
 
-				<section  data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<h2 class="slide-title">
-						...en is single point of failure
-					</h2>
-					<section data-menu-title="SPOF: Hackers">
-						<div class="layer">
-							<img class="panel" style="top: 300px; left: 1300px; width: 1300px;" src="images/8-hacked.png"/>
-							<div class="panel" style="left: 300px; top: 300px;">
-								<ul>
-									<li><b>Doelwit voor hackers</b></li>
-								</ul>
-							</div>
-						</div>
-					</section>
-					<section data-menu-title="SPOF: DDoS">
-						<div class="layer">
-							<img class="panel" style="top: 300px; left: 1600px; width: 1100px;" src="images/9-ddos.png"/>
-							<div class="panel" style="left: 300px; top: 300px;">
-								<ul>
-									<li>Doelwit voor hackers</li>
-									<li><b>Doelwit voor denial of service attacks</b></li>
-								</ul>
-							</div>
-						</div>
-					</section>
-					<section data-menu-title="Profiling">
-						<div class="layer">
-							<img class="panel" style="top: 300px; left: 1500px; width: 900px;" src="images/10-profiling.png"/>
-							<div class="panel" style="left: 300px; top: 300px;">
-								<ul>
-									<li>Doelwit voor hackers</li>
-									<li>Doelwit voor denial of service attacks</li>
-									<li><b>Linkability / profiling</b></li>
-								</ul>
-							</div>
-						</div>
-					</section>
-					<section data-menu-title="Geen cryptografie">
-						<div class="layer">
-							<img class="panel" style="top: 500px; left: 1200px; width: 1400px;" src="images/11-cryptography.png"/>
-							<div class="panel" style="left: 300px; top: 300px;">
-								<ul>
-									<li>Doelwit voor hackers</li>
-									<li>Doelwit voor denial of service attacks</li>
-									<li>Linkability / profiling</li>
-									<li><b>OAuth bevat geen (serieuze) cryptografie</b></li>
-								</ul>
-							</div>
-						</div>
-					</section>
-				</section>
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              A quick IRMA recap
+            </h2>
+          </div>
+          <div class="layer centered">
+            <img src="images/14-irma-app-attributes.png" style="width: 800px;"/>
+          </div>
+          <aside class="notes">
+            Explain: this is the app with attributes (show over18 case)<br />
+            - attribures are obtained by issuer
+          </aside>
+        </section>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							Kan dat niet beter?
-						</h2>
-					</div>
-				</section>
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA protocol
+            </h2>
+          </div>
+          <div class="layer centered">
+            <h3 class="panel" style="top: 300px; left: 700px;">Issuance</h3>
+            <img src="images/15-irma-issuing.png" style="width: 30%;"/>
+            <img src="images/15-divider.png" style=""/>
+            <h3 class="panel" style="top: 300px; left: 2100px;">Disclosure</h3>
+            <img src="images/15-irma-verifying.png" style="width: 30%;"/>
+          </div>
+          <aside class="notes">
+            First collect (issuer), then use attributes (verifier)
+          </aside>
+        </section>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							Dat kan beter!
-						</h2>
-					</div>
-					<div class="layer centered">
-						<img src="images/13-irma-logo.png" style="width: 1400px;"/>
-					</div>
-				</section>
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA disclosure in detail
+            </h2>
+          </div>
+          <div class="layer centered">
+            <h3 class="panel" style="top: 300px; left: 550px;">User</h3>
+            <h3 class="panel" style="top: 300px; left: 2000px;">Verifier</h3>
+            <img src="images/disclosure_detail.svg" style="width: 80%;"/>
+          </div>
+          <aside class="notes">
+            Mention:<br />
+            - challenge - response protocol (freshness)<br />
+            - IRMA response is 'sort of signature'<br />
+          </aside>
+        </section>
 
-				<section data-menu-title="Attribute Based Credentials" data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer centered">
-						<img src="images/14-irma-app-attributes.png" style="width: 800px;"/>
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Giving consent: an example
+            </h2>
+          </div>
+          <div class="layer centered">
+            <img src="images/oda-verklaring.png" style="width: 60%;"/>
+            <!-- https://slimmemeterportal.nl/inschrijven -->
+          </div>
 
-						<img class="panel" style="top: 960px; left: 2236px; width: 490px;" src="images/14-app-store-logo.png"/>
-						<img class="panel" style="top: 1160px; left: 2200px; width: 560px;" src="images/14-play-store-logo.png"/>
-					</div>
-				</section>
+          <aside class="notes">
+            - Explain ODA<br />
+            - Currently a checkbox is enough to retrieve energy data
+          </aside>
+        </section>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							IRMA protocol
-						</h2>
-					</div>
-					<div class="layer centered">
-						<h3 class="panel" style="top: 300px; left: 700px;">Uitgifte</h3>
-						<img src="images/15-irma-issuing.png" style="width: 30%;"/>
-						<img src="images/15-divider.png" style=""/>
-						<h3 class="panel" style="top: 300px; left: 2100px;">Gebruik</h3>
-						<img src="images/15-irma-verifying.png" style="width: 30%;"/>
-					</div>
-				</section>
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+            <div class="layer">
+              <h2 class="slide-title">
+                IRMA Signatures
+              </h2>
+            </div>
+            <div class="layer centered">
+              <img src="images/28-document.png" style="width: 1400px;"/>
+              <div class="panel fragment" style="top: 700px; left: 1050px; width: 800px; font-size: 160%;">This service provider<br />is allowed<br/>to retrieve my<br/>energy data</div>
+            </div>
+            <div class="layer centered fragment current-visible">
+              <img class="panel" style="top: 910px; left: 1280px; width: 500px;" src="images/30-natte-handtekening.png"/>
+            </div>
+            <div class="layer centered fragment current-visible">
+              <img class="panel" style="top: 1150px; left: 1650px; width: 300px;" src="images/31-sealed.png"/>
+              <div class="panel" style="top: 1200px; left: 1950px; width: 800px; font-size: 160%; text-align: left;">
+                0x01 0xff 0x12 0x63<br/>
+                0x87 0x52 0xab 0xdc
+              </div>
+            </div>
+            <div class="layer centered fragment current-visible">
+              <img class="panel" style="top: 1150px; left: 1650px; width: 300px;" src="images/13-irma-logo.png"/>
+              <div class="panel" style="top: 1200px; left: 1950px; width: 800px; font-size: 160%; text-align: left;">
+                <b>Name</b>: Koen<br/>
+                <b>City</b>: Utrecht<br/>
+              </div>
+            </div>
+          <aside class="notes">
+            'wet' vs digital vs IRMA<br />
+            - digital needs PKI to verify (therefore, not much used)<br />
+            - mention linkability
+          </aside>
+        </section>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							Vergelijking OAuth en IRMA (Functioneel)
-						</h2>
-					</div>
-					<div class="layer centered">
-						<table class="alliander-table" style="font-size: 180%;">
-							<tr>
-								<th>&nbsp;</th>
-								<th class="center">OAuth</th>
-								<th class="center">IRMA</th>
-							</tr>
-							<tr class="odd">
-								<td>Gebruiker in control (SSI)</td>
-								<td class="center">
-									<i class="fas fa-times"></i>
-								</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-							</tr>
-							<tr class="even">
-								<td>Gevalideerde gebruikers</td>
-								<td class="center">
-									<i class="fas fa-times"></i>
-								</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-							</tr>
-							<tr class="odd">
-								<td>Groot marktaandeel</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-								<td class="center">
-									<i class="fas fa-times"></i>
-								</td>
-							</tr>
-							<tr class="even">
-								<td>Meer ervaring met implementatie</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-								<td class="center">
-									<i class="fas fa-times"></i>
-								</td>
-							</tr>
-							<tr class="odd">
-								<td>Één login voor applicaties</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-							</tr>
-							<tr class="even">
-								<td>Inloggen met mobiele telefoon</td>
-								<td class="center">
-									<i class="fas fa-times"></i>
-								</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-							</tr>
-						</table>
-					</div>
-				</section>
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA disclosure recap
+            </h2>
+          </div>
+          <div class="layer centered">
+            <h3 class="panel" style="top: 300px; left: 550px;">User</h3>
+            <h3 class="panel" style="top: 300px; left: 2000px;">Verifier</h3>
+            <img src="images/disclosure_detail.svg" style="width: 80%;"/>
+          </div>
+          <aside class="notes">
+            Repeat disclosure: point to challenge ('what is we replace that with..')
+          </aside>
+        </section>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							Vergelijking OAuth en IRMA (Technisch)
-						</h2>
-					</div>
-					<div class="layer centered">
-						<table class="alliander-table" style="font-size: 180%;">
-							<tr>
-								<th>&nbsp;</th>
-								<th class="center">OAuth</th>
-								<th class="center">IRMA</th>
-							</tr>
-							<tr class="odd">
-								<td>Securityhostpot opgelost?</td>
-								<td class="center">
-									<i class="fas fa-times"></i>
-								</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-							</tr>
-							<tr class="even">
-								<td>Geen linkability</td>
-								<td class="center">
-									<i class="fas fa-times"></i>
-								</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-							</tr>
-							<tr class="odd">
-								<td>App/telefoon blokkeren</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-							</tr>
-							<tr class="even">
-								<td>Attributen intrekken</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-							</tr>
-							<tr class="odd">
-								<td>Privacy by Design</td>
-								<td class="center">
-									<i class="fas fa-times"></i>
-								</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-							</tr>
-							<tr class="even">
-								<td>State of the art cryptography</td>
-								<td class="center">
-									<i class="fas fa-times"></i>
-								</td>
-								<td class="center">
-									<i class="fas fa-check"></i>
-								</td>
-							</tr>
-						</table>
-					</div>
-				</section>
-
-				<section data-menu-title="Demo time" data-background-image="images/background-nebmrd.png"
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Disclosure vs Signing
+            </h2>
+          </div>
+          <div class="layer centered">
+            <h3 class="panel" style="top: 300px; left: 500px;">Disclosure</h3>
+            <h3 class="panel" style="top: 300px; left: 2000px;">Signing</h3>
+            <h4 class="panel" style="top: 500px; left: 150px;">User</h4>
+            <h4 class="panel" style="top: 500px; left: 1050px;">Verifier</h4>
+            <h4 class="panel" style="top: 500px; left: 1600px;">User</h4>
+            <h4 class="panel" style="top: 500px; left: 2400px; color: #e66e00;">Signature requester</h4>
+            <img src="images/disclosure_detail.svg" style="width: 50%;"/>
+            <img src="images/signature_detail.svg" style="width: 50%;"/>
+          </div>
+          <aside class="notes">
+            Show differences:<br />
+            - signing of message instead of nonce<br />
+            - valid for ever:<br />
+            - therefore timestamps<br />
+            - both cases: verify with issuer's public key
+          </aside>
+        </section>
+				
+        <section data-menu-title="Demo time" data-background-image="images/background-nebmrd.png"
 				data-background-size="contain">
 					<div class="layer centered text-alliander-orange" style="font-size: 600%">
-						Demo time!
+            Version 1: signing by QR
 					</div>
+          <aside class="notes">
+            - same as disclosure: scan QR and sign
+          </aside>
 				</section>
 
-				<section data-background-image="images/background-nebmrd.png"
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Example case: Give consent for advertisements
+            </h2>
+          </div>
+          <div class="layer centered">
+            <img src="images/sign_qr_demo.png" style="width: 80%;"/>
+          </div>
+          <aside class="notes">
+            - Sign with email address to allow parties to send you mail
+          </aside>
+        </section>
+
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Signing by QR is from 'server' to user, in one session
+            </h2>
+          </div>
+          <div class="layer centered">
+            <h3 class="panel" style="top: 300px; left: 550px;">User</h3>
+            <h3 class="panel" style="top: 300px; left: 1800px;">Signature requester</h3>
+            <img src="images/sign_qr_generic.svg" style="width: 80%;"/>
+          </div>
+          <aside class="notes">
+            - Session-based<br />
+            - What if contract?<br />
+            - Other party can also be person<br />
+          </aside>
+        </section>
+        
+        <section data-menu-title="Demo time" data-background-image="images/background-nebmrd.png"
 				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							DIVA SDK en referentie-implementatie
-						</h2>
+					<div class="layer centered text-alliander-orange" style="font-size: 600%">
+            Version 2: sign by e-mail
 					</div>
-					<div class="layer centered">
-						<a href="https://dev-diva-js-reference-3p.appx.cloud/my-account" target="_blank">
-							<img src="images/19-diva-sdk.png" style="width: 2000px;"/>
-						</a>
-					</div>
+          <aside class="notes">
+            - Second version: sign by e-mail<br />
+          </aside>
 				</section>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							Zelf aan de slag met IRMA
-						</h2>
-					</div>
-					<div class="layer centered">
-						<img src="images/20-production-attributes.png" style="width: 30%;"/>
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Sign by mail is 'user to user', asynchronous
+            </h2>
+          </div>
+          <div class="layer centered">
+            <h3 class="panel" style="top: 300px; left: 550px;">User</h3>
+            <h3 class="panel" style="top: 300px; left: 1800px;">Signature requester</h3>
+            <img src="images/sign_mail_generic.svg" style="width: 80%;"/>
+          </div>
+          <aside class="notes">
+            - We use email, but WhatsApp could also be used<br />
+            - Desktop app to create/verify needed<br />
+          </aside>
+        </section>
+        
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Sign by QR vs sign by mail
+            </h2>
+          </div>
+          <div class="layer centered">
+            <h3 class="panel" style="top: 300px; left: 500px;">Sign by QR</h3>
+            <h3 class="panel" style="top: 300px; left: 2000px;">Sign by mail</h3>
+            <h4 class="panel" style="top: 500px; left: 150px;">User</h4>
+            <h4 class="panel" style="top: 500px; left: 950px;">Signature requester</h4>
+            <h4 class="panel" style="top: 500px; left: 1575px;">User</h4>
+            <h4 class="panel" style="top: 500px; left: 2400px;">Signature requester</h4>
+            <img src="images/sign_qr_generic.svg" style="width: 50%;"/>
+            <img src="images/sign_mail_generic.svg" style="width: 50%;"/>
+          </div>
+          <aside class="notes">
+            Point again differences: <br />
+            - transport medium
+            - session vs asynchronous
+          </aside>
+        </section>
+        
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Example case: Request for a donation
+            </h2>
+          </div>
+          <div class="layer centered">
+            <h3 class="panel" style="top: 300px; left: 400px;">koenvaningen@xs4all.nl</h3>
+            <h3 class="panel" style="top: 300px; left: 1800px;">irma@vaningen.email</h3>
+            <img src="images/sign_donate_example.svg" style="width: 80%;"/>
+          </div>
+          <aside class="notes">
+            - message: I will donate 100BTC to PBDF.
+            - attribuut: naam (idin)
+            - from: irma@vaningen.email
+            - to: koenvaningen@xs4all.nl
+          </aside>
+        </section>
 
-						<img src="images/20-get-on-github.png" style="width: 30%;"/>
-						<h3 class="panel" style="top: 1000px; left: 1700px;">https://github.com/Alliander/diva-irma-js</h3>
-					</div>
-				</section>
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Conclusions
+            </h2>
+          </div>
+          <div class="layer centered" style="font-size: 150%">
+            <ul>
+              <li>IRMA signatures are cool!</li>
+              <li>We can use IRMA signatures in a variety of use cases</li>
+              <ul><li>Also for 'anonymous' signatures!</li></ul>
+              <ul><li>Easy to verify later on</li></ul>
+              <li>IRMA signatures can be used both in a session as well as 'offline'</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            - 'the law requires it'<br />
+            - 'much stronger than that little checkbox'
+          </aside>
+        </section>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							Waarvoor kan dit worden ingezet?
-						</h2>
-					</div>
-					<div class="layer centered fragment current-visible">
-						<img src="images/22-mijn-liander.png" style="width: 2000px;"/>
-					</div>
-					<div class="layer centered fragment current-visible">
-						<img src="images/23-alliander-login.png" style="width: 2000px;"/>
-					</div>
-					<div class="layer centered fragment current-visible">
-						<img src="images/24-toestemming-geven.png" style="width: 2000px;"/>
-					</div>
-					<div class="layer centered fragment current-visible">
-						<img src="images/25-irma-pluggable-identity-management.png" style="width: 2000px;"/>
-					</div>
-				</section>
+        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              References
+            </h2>
+          </div>
+          <div class="layer centered" style="font-size: 150%">
+            <section data-menu-title="References" data-markdown>
+              <textarea data-template>
+                - [Energy transition picture: renewableenergyworld.com](https://www.renewableenergyworld.com/content/dam/rew/migrated/assets/images/story/2015/2/18/feature-0-1424284386014.png)
+                - [ODA statement: slimmemeterportal.nl/inschrijven](https://slimmemeterportal.nl/inschrijven)
+                - [Icons: thenounproject.com](https://thenounproject.com/)
+                - [IRMA pictures: privacybydesign.foundation](https://privacybydesign.foundation)
+              </textarea>
+            </section>
+          </div>
+        </section>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							Volgende stappen
-						</h2>
-					</div>
-					<div class="layer">
-						<div class="panel" style="top:200px; left: 300px;">
-							<ul>
-								<li>Wij willen bijdragen aan een veiligere wereld en deze oplossing op meer plekken toepassen</li>
-								<li>Welke projecten heb jij waar we dit kunnen toepassen of uitproberen?</li>
-								<li>We komen graag vertellen over deze moderne security oplossing(en)!</li>
-							</ul>
-						</div>
-						<img class="panel" src="images/26-we-want-to-help.png" style="bottom: 200px; left: 860px; width: 1000px;"/>
-					</div>
-				</section>
+      </div>
+    </div>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<section>
-						<div class="layer">
-							<div class="panel" style="top: 200px; left: 300px;">
-								<h1 class="green-box">
-									Extra: Digitale<br/> Handtekeningen
-								</h1>
-							</div>
-						</div>
-					</section>
-					<section>
-						<div class="layer">
-							<h2 class="slide-title">
-								Digitale handtekeningen
-							</h2>
-						</div>
-						<div class="layer centered">
-							<img src="images/28-document.png" style="width: 1400px;"/>
-							<div class="panel fragment" style="top: 700px; left: 1050px; width: 800px; font-size: 160%;">ODA portal mag mijn<br/> P4 energiedata<br/> opvragen</div>
-						</div>
-						<div class="layer centered fragment current-visible">
-							<img class="panel" style="top: 910px; left: 1280px; width: 500px;" src="images/30-natte-handtekening.png"/>
-						</div>
-						<div class="layer centered fragment current-visible">
-							<img class="panel" style="top: 1150px; left: 1650px; width: 300px;" src="images/31-sealed.png"/>
-							<div class="panel" style="top: 1200px; left: 1950px; width: 800px; font-size: 160%; text-align: left;">
-								0x01 0xff 0x12 0x63<br/>
-								0x87 0x52 0xab 0xdc
-							</div>
-						</div>
-						<div class="layer centered fragment current-visible">
-							<img class="panel" style="top: 1150px; left: 1650px; width: 300px;" src="images/13-irma-logo.png"/>
-							<div class="panel" style="top: 1200px; left: 1950px; width: 800px; font-size: 160%; text-align: left;">
-								<b>Naam</b>: Al Liander<br/>
-								<b>Woonplaats</b> Arnhem<br/>
-							</div>
-						</div>
-					</section>
-					<section>
-						<div class="layer">
-							<h2 class="slide-title">
-								Integratie in online portal
-							</h2>
-						</div>
-						<div class="layer centered">
-							<img src="images/33-browser.png" style="width: 1400px;"/>
-						</div>
-						<div class="layer centered">
-							<img src="images/28-document.png" style="width: 700px;"/>
-						</div>
-						<div class="layer">
-							<img class="panel" src="images/13-irma-logo.png" style="top: 950px; left: 1500px; width: 200px;"/>
-						</div>
-					</section>
-				</section>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<section>
-						<div class="layer">
-							<div class="panel" style="top: 200px; left: 300px;">
-								<h1 class="green-box">
-									Extra: Technische<br/> Details
-								</h1>
-							</div>
-						</div>
-					</section>
-					<section>
-						<div class="layer">
-							<h2 class="slide-title">
-								DIVA en IRMA componenten
-							</h2>
-						</div>
-						<div class="layer centered">
-							<img src="images/35-diva-architecture.png" style="width: 1800px;"/>
-						</div>
-					</section>
-				</section>
-
-				<section data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer">
-						<h2 class="slide-title">
-							Thanks
-						</h2>
-					</div>
-					<div class="layer centered">
-						Icons: https://thenounproject.com/
-					</div>
-				</section>
-
-			</div>
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				slideNumber: true,
-				transition: 'convex',
-				width: 2880,
-				height: 1620,
-				center: false,
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/reveal.js-menu/menu.js' },
-					{ src: 'plugin/reveal.js-toolbar/toolbar.js' },
-					{ src: 'plugin/spotlight/spotlight.js' },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				],
-				spotlight: {
-					size: 100,
-					toggleSpotlightOnMouseDown: false,
-				},
-				toolbar: {
-					help: true,
-				},
-				keyboard: {
-					// toggle spotlight by pressing key 'c'
-					67: function() { RevealSpotlight.toggleSpotlight() },
-				},
-			});
-		</script>
-	</body>
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        slideNumber: true,
+        transition: 'none',
+        width: 2880,
+        height: 1620,
+        center: false,
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/reveal.js-menu/menu.js' },
+          { src: 'plugin/reveal.js-toolbar/toolbar.js' },
+          { src: 'plugin/spotlight/spotlight.js' },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ],
+				pdfMaxPagesPerSlide: 1,
+        spotlight: {
+          size: 100,
+          toggleSpotlightOnMouseDown: false,
+        },
+        toolbar: {
+          help: true,
+        },
+        keyboard: {
+          // toggle spotlight by pressing key 'c'
+          67: function() { RevealSpotlight.toggleSpotlight() },
+        },
+      });
+    </script>
+  </body>
 </html>
