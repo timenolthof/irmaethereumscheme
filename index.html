@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>IRMA signatures: sign-by-QR and sign-by-mail</title>
+    <title>IRMA and Blockchains: Architecting decentralized IRMA schemes</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/alliander.css">
@@ -28,107 +28,174 @@
     <div class="reveal">
       <div class="slides">
 
+				
+				<!-- 1 -->
         <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
           <div class="layer">
             <div class="panel" style="top: 200px; left: 300px;">
               <h1 class="green-box">
-                IRMA signatures:<br /> sign-by-QR and sign-by-mail
+                IRMA and Blockchains
               </h1>
               <h2 class="green-box-subtitle">
-                Use your IRMA attributes to sign contracts and statements
+                Architecting decentralized IRMA schemes
               </h2>
             </div>
-            <div class="sidepanel">
-              Koen van Ingen<br/>
-              <br/>
-            </div>
-          </div>
+					</div>
+					<div class="layer centered">
+						<div>
+							<br/><br/>
+							<img src="images/2-timen.png" style="width: 300px;" /><br/>
+							<br/>
+							Timen Olthof<br/>
+							R&D lead / architect decentalized networks and identities @ Alliander
+						</div>
+					</div>
 
           <aside class="notes">
-          </aside>
-        </section>
+							I'm working for Alliander<br />
+							- power grid operator (nothing to do with power production<br />
+							- Same team as Koen<br />
+							- Also looking at other uses cases like internal security, asset management, net management.<br />
+						</aside>
+				</section>
+				
+				<!-- 3 -->
+				<section data-background-image="images/blockchain-logo.jpg" data-background-size="contain" data-background-repeat="repeat">
+					<!-- https://news.bitcoin.com/wp-content/uploads/2016/02/BCinfo.jpg -->
+					<div class="layer">
+						<div class="panel fragment" style="top: 500px; left: 1300px;">
+							<img src="images/13-irma-logo.png" style="width: 1200px;"/>
+						</div>
+					</div>
 
+					<aside class="notes">
+						- Theme is IRMA and Blockchain<br />
+						- Go into detail on how IRMA works<br />
+						- Discussion about what Blockchain has to offer<br />
+						- Results of combination<br />
+					</aside>
+				</section>
+
+				<!-- 4 -->
         <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
           <div class="layer">
             <h2 class="slide-title">
-              Who am I?
-            </h2>
-          </div>
-          <div class="layer centered" style="">
-            <div>
-              <img src="images/2-koen.png" style="width: 500px;" /><br/>
-              <br/>
-              Koen van Ingen<br/>
-              Alliander New Business & R&D
-            </div>
-          </div>
-
-          <aside class="notes">
-            I'm working at Alliander<br />
-            - power grid operator (nothing to do with power production<br />
-          </aside>
-        </section>
-        
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
-          <div class="layer">
-            <h2 class="slide-title">
-              IRMA and Alliander?
-            </h2>
-          </div>
-          <div class="layer centered">
-            <img src="images/before-energietransitie.png" style="width: 1200px;"/>
-            <!-- https://www.renewableenergyworld.com/content/dam/rew/migrated/assets/images/story/2015/2/18/feature-0-1424284386014.png -->
-          </div>
-
-          <aside class="notes">
-            <br />
-            Energy transition:<br />
-            - More local and dynamic production of energy<br />
-            - You can 'sell' your energy, variable energy price<br />
-            - WHO is using energy will be more important<br />
-            - Permission/Consent to use energy data is important<br />
-            - IRMA would be a nice solution!
-          </aside>
-        </section>
-
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
-          <div class="layer">
-            <h2 class="slide-title">
-              IRMA and Alliander?
-            </h2>
-          </div>
-          <div class="layer centered">
-            <img src="images/energietransitie.png" style="width: 1200px;"/>
-            <!-- https://www.renewableenergyworld.com/content/dam/rew/migrated/assets/images/story/2015/2/18/feature-0-1424284386014.png -->
-          </div>
-
-          <aside class="notes">
-            <br />
-            Energy transition:<br />
-            - More local and dynamic production of energy<br />
-            - You can 'sell' your energy, variable energy price<br />
-            - WHO is using energy will be more important<br />
-            - Permission/Consent to use energy data is important<br />
-            - IRMA would be a nice solution!
-          </aside>
-        </section>
-
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
-          <div class="layer">
-            <h2 class="slide-title">
-              A quick IRMA recap
+              IRMA background
             </h2>
           </div>
           <div class="layer centered">
             <img src="images/14-irma-app-attributes.png" style="width: 800px;"/>
           </div>
           <aside class="notes">
-            Explain: this is the app with attributes (show over18 case)<br />
-            - attribures are obtained by issuer
+						- Today I want to focus on what makes IRMA attributes valuable and useful
+						- We've seen this image before
           </aside>
-        </section>
+				</section>
 
+				<!-- 5 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA Attributes
+            </h2>
+          </div>
+          <div class="layer centered">
+            <img src="images/irma-schemes-attributes.png" style="width: 520px;"/>
+          </div>
+          <aside class="notes">
+						- Conceptually one could say that an identity wallet consists of attributes
+          </aside>
+				</section>
+				
+				<!-- 6 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA Credentials
+            </h2>
+          </div>
+          <div class="layer centered">
+            <img src="images/irma-schemes-credentials.png" style="width: 520px;"/>
+          </div>
+          <aside class="notes">
+						- Attributes are organized in credentials
+          </aside>
+				</section>
+
+				<!-- 7 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA Master Key
+            </h2>
+          </div>
+          <div class="layer centered">
+            <img src="images/irma-schemes-masterkey.png" style="width: 520px;"/>
+          </div>
+          <aside class="notes">
+						- Always kept secret (never revealed outside of device)
+          </aside>
+				</section>
+
+				<!-- 8 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA Proofs (naive)
+            </h2>
+          </div>
+          <div class="layer centered">
+            <img src="images/irma-schemes-proof.png" style="height: 1400px;"/>
+          </div>
+          <aside class="notes">
+						- Disclosure of Attributes
+						- Signing of documents
+          </aside>
+				</section>
+
+				<!-- 9 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA Proofs (with selective disclosure)
+            </h2>
+          </div>
+          <div class="layer centered">
+            <img src="images/irma-schemes-proof-selective.png" style="height: 1400px;"/>
+          </div>
+          <aside class="notes">
+						
+          </aside>
+				</section>
+
+				<!-- 10 -->
         <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Why are IRMA proofs valuable?
+            </h2>
+          </div>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">Short answer: Because the relying party decides that the proofs are valid.</li>
+								<li class="fragment">The RP has to trust all algorithms, tools and inputs that he uses to do this validation.</li>
+							</ul>
+							<br /><br />
+							<ul>
+								<li class="fragment">The core element of this validation is trusting the issuers of the attributes.</li>
+								<li class="fragment">Verify cryptographically that the issuer(s) signed the attributes/credentials.</li>
+								<li class="fragment">Of course the IRMA software implementation does this for you :)</li> 
+							</ul>
+						</div>
+          </div>
+          <aside class="notes">
+            - <br />
+          </aside>
+				</section>
+				
+				<!-- 11 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
           <div class="layer">
             <h2 class="slide-title">
               IRMA protocol
@@ -146,264 +213,440 @@
           </aside>
         </section>
 
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+				<!-- 12 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
           <div class="layer">
             <h2 class="slide-title">
-              IRMA disclosure in detail
+              How to validate IRMA proofs?
+            </h2>
+          </div>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">The RP has to know public keys of the issuers.</li>
+								<li class="fragment">The RP has to know that these keys do indeed belong to the parties that are trusted.</li>
+								<li class="fragment">For EVERY issuer that is relevant in the transaction/proof!</li>
+							</ul>
+						</div>
+          </div>
+          <aside class="notes">
+						- These issuer keys may change over time.<br />
+						- Pure P2P solution would require the RP to maintain key sync relations with ALL relevant issuers.<br />
+						- IRMA solves these issues using Schemes.
+          </aside>
+				</section>
+
+				<!-- 13 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA Issuer Data
             </h2>
           </div>
           <div class="layer centered">
-            <h3 class="panel" style="top: 300px; left: 550px;">User</h3>
-            <h3 class="panel" style="top: 300px; left: 2000px;">Verifier</h3>
-            <img src="images/disclosure_detail.svg" style="width: 80%;"/>
+            <img src="images/irma-schemes-issuerdata.png" style="height: 1400px;"/>
           </div>
           <aside class="notes">
-            Mention:<br />
-            - challenge - response protocol (freshness)<br />
-            - IRMA response is 'sort of signature'<br />
+							- Keys, metadata, credential specifications
           </aside>
-        </section>
+				</section>
 
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+				<!-- 14 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
           <div class="layer">
             <h2 class="slide-title">
-              Giving consent: an example
+              IRMA Schemes
             </h2>
           </div>
           <div class="layer centered">
-            <img src="images/oda-verklaring.png" style="width: 60%;"/>
-            <!-- https://slimmemeterportal.nl/inschrijven -->
+            <img src="images/irma-schemes-scheme.png" style="height: 1400px;"/>
           </div>
-
           <aside class="notes">
-            - Explain ODA<br />
-            - Currently a checkbox is enough to retrieve energy data
+						- Managed set of public information, context data for IRMA transactions
+						- Managed as a (protected) set of files.
+						- Schemes also have a few other functions, I wont go into detail here.
           </aside>
-        </section>
+				</section>
 
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
-            <div class="layer">
-              <h2 class="slide-title">
-                IRMA Signatures
-              </h2>
-            </div>
-            <div class="layer centered">
-              <img src="images/28-document.png" style="width: 1400px;"/>
-              <div class="panel fragment" style="top: 700px; left: 1050px; width: 800px; font-size: 160%;">This service provider<br />is allowed<br/>to retrieve my<br/>energy data</div>
-            </div>
-            <div class="layer centered fragment current-visible">
-              <img class="panel" style="top: 910px; left: 1280px; width: 500px;" src="images/30-natte-handtekening.png"/>
-            </div>
-            <div class="layer centered fragment current-visible">
-              <img class="panel" style="top: 1150px; left: 1650px; width: 300px;" src="images/31-sealed.png"/>
-              <div class="panel" style="top: 1200px; left: 1950px; width: 800px; font-size: 160%; text-align: left;">
-                0x01 0xff 0x12 0x63<br/>
-                0x87 0x52 0xab 0xdc
-              </div>
-            </div>
-            <div class="layer centered fragment current-visible">
-              <img class="panel" style="top: 1150px; left: 1650px; width: 300px;" src="images/13-irma-logo.png"/>
-              <div class="panel" style="top: 1200px; left: 1950px; width: 800px; font-size: 160%; text-align: left;">
-                <b>Name</b>: Koen<br/>
-                <b>City</b>: Utrecht<br/>
-              </div>
-            </div>
+				<!-- 15 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+								Schemes allow easier managing of IRMA issuer data.
+            </h2>
+          </div>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">Instead of knowing about all issuers, we now just have to know about a few schemes.</li>
+								<li class="fragment">IRMA Schemes are open, anyone can start a scheme.</li>
+								<li class="fragment">Someone who starts a scheme, becomes the 'scheme manager' for that scheme.</li>
+							</ul>
+						</div>
+          </div>
           <aside class="notes">
-            'wet' vs digital vs IRMA<br />
-            - digital needs PKI to verify (therefore, not much used)<br />
-            - mention linkability
+						- At the cost of another link in the trust chain.
+						- How do we manage schemes?
           </aside>
-        </section>
+				</section>
 
+				<!-- 16 -->
         <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
           <div class="layer">
             <h2 class="slide-title">
-              IRMA disclosure recap
+							Managing a scheme is a serious task!
             </h2>
           </div>
-          <div class="layer centered">
-            <h3 class="panel" style="top: 300px; left: 550px;">User</h3>
-            <h3 class="panel" style="top: 300px; left: 2000px;">Verifier</h3>
-            <img src="images/disclosure_detail.svg" style="width: 80%;"/>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">Current implementation as a signed file structure (on Github).</li>
+								<li class="fragment">Scheme manager manages all parts of the scheme.</li>
+							</ul>
+							<br /><br />
+							<ul>
+								<li class="fragment">Good for standardization.</li>
+								<li class="fragment">Relatively inflexible.</li>
+								<li class="fragment">Are improvements possible?</li>
+							</ul>
+						</div>
           </div>
           <aside class="notes">
-            Repeat disclosure: point to challenge ('what is we replace that with..')
+						- Overhead of key rotation.
+						- Overhead for adding specifications.
+						- Use case IoT.
           </aside>
-        </section>
+				</section>
 
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+				<!-- 17 -->
+				<section data-background-image="images/blockchain-logo.jpg" data-background-size="contain" data-background-repeat="repeat">
+					<!-- https://news.bitcoin.com/wp-content/uploads/2016/02/BCinfo.jpg -->
+				</section>
+
+				<!-- 18 -->
+				<section data-background-image="images/blockchain2.jpg" data-background-size="contain" data-background-repeat="repeat">
+					<!-- https://www.intheblack.com/articles/2018/03/22/blockchain-future-record-keeping -->
+				</section>	
+
+				<!-- 19 -->
+				<section data-background-video="images/veilig.mp4">
+					<!-- https://www.youtube.com/watch?v=98eAygGLoWI -->
+				</section>
+
+				<!-- 20 -->
+				<section data-background-image="images/evil-blockchain.gif" data-background-size="contain" data-background-repeat="repeat">
+					<!-- https://giphy.com/gifs/news-QZPhk0XqBpdbq -->
+				</section>
+
+				<!-- 21 -->
+				<section data-background-image="images/blockchain4.jpg" data-background-size="cover" data-background-repeat="repeat">
+					<!-- https://thenextweb.com/contributors/2017/11/09/how-blockchain-will-change-major-industries/ -->
+				</section>
+
+				<!-- 22 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
           <div class="layer">
             <h2 class="slide-title">
-              Disclosure vs Signing
+							What is Blockchain?
+            </h2>
+          </div>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">For the purpose of this talk:</li>
+								<li class="fragment">Distributed Ledger Technology</li>
+								<li class="fragment">No single system administrator.</li>
+							</ul>
+						</div>
+          </div>
+          <aside class="notes">
+						- I don't know.
+						- Overhead for adding specifications.
+						- Use case IoT.
+          </aside>
+				</section>
+
+				<!-- 23 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+							How do other Identity Management systems use Blockchain?
+            </h2>
+          </div>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">They started out really naive.</li>
+								<li class="fragment">Storing attributes (= personal data) on Blockchain?</li>
+								<li class="fragment">Store private (non-public) data on Blockchain?</li>
+								<li class="fragment">Gravest mistake: storing re-usable identifiers such as (a public version of) the master key on blockchain!</li>
+							</ul>
+							<br /><br />
+							<ul>
+								<li class="fragment">Developments are going fast.</li>
+								<li class="fragment">Soverin is implementing a kind of Attribute Based Credentials (AnonCreds)</li>
+							</ul>
+						</div>
+          </div>
+          <aside class="notes">
+						- 
+          </aside>
+				</section>
+
+				<!-- 24 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+							Issues with Identity Management on Blockchain
+            </h2>
+          </div>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">Linkability in case of repeated use of identifiers (which is generally the case).</li>
+								<li class="fragment">No dataminimalism (GDPR)</li>
+								<li class="fragment">No right to be forgotten (GDPR)</li>
+								<li class="fragment">Complexity / Rookie mistakes</li>
+							</ul>
+						</div>
+          </div>
+          <aside class="notes">
+						- Connecting to public node
+          </aside>
+				</section>
+
+				<!-- 25 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+							(Provisional) golden rule for Blockchain development
+            </h2>
+          </div>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">Only store public data on (public blockchains)</li>
+								<li class="fragment">Luckily the IRMA scheme IS public data!</li>
+							</ul>
+								<br /><br />
+							<ul>
+								<li class="fragment">Not trying to do 'IRMA on Blockchain'.</li>
+								<li class="fragment">Better question: are these technologies useful to improve IRMA?</li>
+							</ul>
+						</div>
+          </div>
+          <aside class="notes">
+						- Connecting to public node
+          </aside>
+				</section>
+
+				<!-- 26 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+							IRMA Scheme implementation on Ethereum
+            </h2>
+          </div>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">It works!</li>
+								<li class="fragment">As close to original implementation as possible.</li>
+								<li class="fragment">IRMA Scheme represented as a smart contract.</li>
+								<li class="fragment">Experimental implementation.</li>
+								<li class="fragment">
+									Available on Github - <a href="https://github.com/timenolthof/irmaethereumscheme">https://github.com/timenolthof/irmaethereumscheme</a>
+								</li>
+							</ul>
+						</div>
+          </div>
+          <aside class="notes">
+						- Connecting to public node
+          </aside>
+				</section>
+
+				<!-- 27 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+					<section>
+						<div class="layer">
+							<h2 class="slide-title">
+								IRMA Scheme Smart Contract - Data Types
+							</h2>
+						</div>
+						<div class="layer centered">
+							<img src="images/code-solidity.png" style="height: 1400px;"/>
+						</div>
+						<aside class="notes">
+							-
+						</aside>
+					</section>
+					<section>
+						<div class="layer">
+							<h2 class="slide-title">
+								IRMA Schemes
+							</h2>
+						</div>
+						<div class="layer centered">
+							<img src="images/irma-schemes-scheme.png" style="height: 1400px;"/>
+						</div>
+						<aside class="notes">
+							- Managed set of public information, context data for IRMA transactions
+							- Managed as a (protected) set of files.
+							- Schemes also have a few other functions, I wont go into detail here.
+						</aside>
+					</section>
+					<section>
+							<div class="layer">
+									<h2 class="slide-title">
+										Serialization using Protocol Buffers
+									</h2>
+								</div>
+								<div class="layer centered">
+									<img src="images/code-protobuff.png" style="height: 1000px;"/>
+								</div>
+								<aside class="notes">
+									-
+								</aside>
+					</section>
+				</section>
+
+				<!-- 28 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA Scheme Smart Contract - Functions
             </h2>
           </div>
           <div class="layer centered">
-            <h3 class="panel" style="top: 300px; left: 500px;">Disclosure</h3>
-            <h3 class="panel" style="top: 300px; left: 2000px;">Signing</h3>
-            <h4 class="panel" style="top: 500px; left: 150px;">User</h4>
-            <h4 class="panel" style="top: 500px; left: 1050px;">Verifier</h4>
-            <h4 class="panel" style="top: 500px; left: 1600px;">User</h4>
-            <h4 class="panel" style="top: 500px; left: 2400px; color: #e66e00;">Signature requester</h4>
-            <img src="images/disclosure_detail.svg" style="width: 50%;"/>
-            <img src="images/signature_detail.svg" style="width: 50%;"/>
+            <img src="images/code-solidity-function.png" style="height: 1200px;"/>
           </div>
           <aside class="notes">
-            Show differences:<br />
-            - signing of message instead of nonce<br />
-            - valid for ever:<br />
-            - therefore timestamps<br />
-            - both cases: verify with issuer's public key
+						-
           </aside>
-        </section>
+				</section>
 				
-        <section data-menu-title="Demo time" data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer centered text-alliander-orange" style="font-size: 600%">
-            Version 1: signing by QR
-					</div>
+				<!-- 29 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+							Advantages of Ethereum implementation
+            </h2>
+          </div>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">Issuers can manage their own metadata.</li>
+								<li class="fragment">Issuers can manage their own key (rotation).</li>
+								<li class="fragment">A lot less work for the scheme.</li>								
+								<li class="fragment">Scheme data structure can become more dynamic when using multiple smart contracts.</li>
+								<li class="fragment">Schemes can support possible new features like 'web of trust'.</li>
+							</ul>
+						</div>
+          </div>
           <aside class="notes">
-            - same as disclosure: scan QR and sign
+						- 
+          </aside>
+				</section>
+
+				<!-- 30 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+							Problems with Ethereum implementation
+            </h2>
+          </div>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">Ethereum VM and Solidity are slow, incomplete, and expensive.</li>
+								<li class="fragment">Transaction costs, although they are ok at about €5-10.</li>
+								<li class="fragment">There are tight limits on data size (gas limit).</li>
+								<li class="fragment">Adds a lot of complexity and dependencies to the codebase.</li>
+								<li class="fragment">Doesn't remove the need for a single 'root of trust'.</li>
+							</ul>
+						</div>
+          </div>
+          <aside class="notes">
+						- 
+          </aside>
+				</section>
+
+				<!-- 31 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+							Next Steps / Future Work
+            </h2>
+          </div>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">Ethereum is too limited, monitor other suitable technologies</li>
+								<li class="fragment">IPFS (or variants) might be a candidate.</li>
+								<li class="fragment">Research other ways to decentralize schemes as well.</li>
+							</ul>
+						</div>
+          </div>
+          <aside class="notes">
+						- Address books, p2p
+          </aside>
+				</section>
+
+				<!-- 31 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+							Take Home
+            </h2>
+          </div>
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<ul>
+								<li class="fragment">Never store non-public data on a blockchain.</li>
+								<li class="fragment">Particularly not personal data.</li>
+								<li class="fragment">Using Blockchain for IRMA schemes can have some practical benefits.</li>
+								<li class="fragment">Better DLT needed to make IRMA scheme feasible in production.</li>
+							</ul>
+						</div>
+          </div>
+          <aside class="notes">
+						- 
+          </aside>
+				</section>
+				
+				<!-- 32 -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+						<div class="panel" style="left: 400px; top: 400px;">
+							<h1 class="slide-title">
+								Thank you!
+							</h1>
+						</div>
+          </div>
+          <aside class="notes">
+						- 
           </aside>
 				</section>
 
         <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
           <div class="layer">
             <h2 class="slide-title">
-              Example case: Give consent for advertisements
+              Image/video sources
             </h2>
-          </div>
-          <div class="layer centered">
-            <img src="images/sign_qr_demo.png" style="width: 80%;"/>
-          </div>
-          <aside class="notes">
-            - Sign with email address to allow parties to send you mail
-          </aside>
-        </section>
-
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
-          <div class="layer">
-            <h2 class="slide-title">
-              Signing by QR is from 'server' to user, in one session
-            </h2>
-          </div>
-          <div class="layer centered">
-            <h3 class="panel" style="top: 300px; left: 550px;">User</h3>
-            <h3 class="panel" style="top: 300px; left: 1800px;">Signature requester</h3>
-            <img src="images/sign_qr_generic.svg" style="width: 80%;"/>
-          </div>
-          <aside class="notes">
-            - Session-based<br />
-            - What if contract?<br />
-            - Other party can also be person<br />
-          </aside>
-        </section>
-        
-        <section data-menu-title="Demo time" data-background-image="images/background-nebmrd.png"
-				data-background-size="contain">
-					<div class="layer centered text-alliander-orange" style="font-size: 600%">
-            Version 2: sign by e-mail
 					</div>
-          <aside class="notes">
-            - Second version: sign by e-mail<br />
-          </aside>
-				</section>
-
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
-          <div class="layer">
-            <h2 class="slide-title">
-              Sign by mail is 'user to user', asynchronous
-            </h2>
-          </div>
-          <div class="layer centered">
-            <h3 class="panel" style="top: 300px; left: 550px;">User</h3>
-            <h3 class="panel" style="top: 300px; left: 1800px;">Signature requester</h3>
-            <img src="images/sign_mail_generic.svg" style="width: 80%;"/>
-          </div>
-          <aside class="notes">
-            - We use email, but WhatsApp could also be used<br />
-            - Desktop app to create/verify needed<br />
-          </aside>
-        </section>
-        
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
-          <div class="layer">
-            <h2 class="slide-title">
-              Sign by QR vs sign by mail
-            </h2>
-          </div>
-          <div class="layer centered">
-            <h3 class="panel" style="top: 300px; left: 500px;">Sign by QR</h3>
-            <h3 class="panel" style="top: 300px; left: 2000px;">Sign by mail</h3>
-            <h4 class="panel" style="top: 500px; left: 150px;">User</h4>
-            <h4 class="panel" style="top: 500px; left: 950px;">Signature requester</h4>
-            <h4 class="panel" style="top: 500px; left: 1575px;">User</h4>
-            <h4 class="panel" style="top: 500px; left: 2400px;">Signature requester</h4>
-            <img src="images/sign_qr_generic.svg" style="width: 50%;"/>
-            <img src="images/sign_mail_generic.svg" style="width: 50%;"/>
-          </div>
-          <aside class="notes">
-            Point again differences: <br />
-            - transport medium
-            - session vs asynchronous
-          </aside>
-        </section>
-        
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
-          <div class="layer">
-            <h2 class="slide-title">
-              Example case: Request for a donation
-            </h2>
-          </div>
-          <div class="layer centered">
-            <h3 class="panel" style="top: 300px; left: 400px;">koenvaningen@xs4all.nl</h3>
-            <h3 class="panel" style="top: 300px; left: 1800px;">irma@vaningen.email</h3>
-            <img src="images/sign_donate_example.svg" style="width: 80%;"/>
-          </div>
-          <aside class="notes">
-            - message: I will donate 100BTC to PBDF.
-            - attribuut: naam (idin)
-            - from: irma@vaningen.email
-            - to: koenvaningen@xs4all.nl
-          </aside>
-        </section>
-
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
-          <div class="layer">
-            <h2 class="slide-title">
-              Conclusions
-            </h2>
-          </div>
-          <div class="layer centered" style="font-size: 150%">
-            <ul>
-              <li>IRMA signatures are cool!</li>
-              <li>We can use IRMA signatures in a variety of use cases</li>
-              <ul><li>Also for 'anonymous' signatures!</li></ul>
-              <ul><li>Easy to verify later on</li></ul>
-              <li>IRMA signatures can be used both in a session as well as 'offline'</li>
-            </ul>
-          </div>
-          <aside class="notes">
-            - 'the law requires it'<br />
-            - 'much stronger than that little checkbox'
-          </aside>
-        </section>
-
-        <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
-          <div class="layer">
-            <h2 class="slide-title">
-              References
-            </h2>
-          </div>
-          <div class="layer centered" style="font-size: 150%">
-            <section data-menu-title="References" data-markdown>
-              <textarea data-template>
-                - [Energy transition picture: renewableenergyworld.com](https://www.renewableenergyworld.com/content/dam/rew/migrated/assets/images/story/2015/2/18/feature-0-1424284386014.png)
-                - [ODA statement: slimmemeterportal.nl/inschrijven](https://slimmemeterportal.nl/inschrijven)
-                - [Icons: thenounproject.com](https://thenounproject.com/)
-                - [IRMA pictures: privacybydesign.foundation](https://privacybydesign.foundation)
-              </textarea>
-            </section>
-          </div>
+					<div class="layer">
+							<div class="panel" style="left: 400px; top: 400px;">
+								<ul>
+									<li>https://news.bitcoin.com/wp-content/uploads/2016/02/BCinfo.jpg</li>
+									<li>https://www.intheblack.com/articles/2018/03/22/blockchain-future-record-keeping</li>
+									<li>https://www.youtube.com/watch?v=98eAygGLoWI</li>
+									<li>https://www.intheblack.com/articles/2018/03/22/blockchain-future-record-keeping</li>
+									<li>https://giphy.com/gifs/news-QZPhk0XqBpdbq</li>
+									<li>https://thenextweb.com/contributors/2017/11/09/how-blockchain-will-change-major-industries/</li>
+									<li>https://privacybydesign.foundation</li>
+								</ul>
+							</div>
+						</div>
         </section>
 
       </div>
@@ -429,7 +672,6 @@
           { src: 'plugin/reveal.js-menu/menu.js' },
           { src: 'plugin/reveal.js-toolbar/toolbar.js' },
           { src: 'plugin/spotlight/spotlight.js' },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ],
 				pdfMaxPagesPerSlide: 1,
         spotlight: {
