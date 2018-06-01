@@ -179,10 +179,7 @@
 						<div class="panel" style="left: 400px; top: 400px;">
 							<ul>
 								<li class="fragment">Short answer: Because the relying party decides that the proofs are valid.</li>
-								<li class="fragment">The RP has to trust all algorithms, tools and inputs that he uses to do this validation.</li>
-							</ul>
-							<br /><br />
-							<ul>
+								<li class="fragment">The RP has to trust all algorithms, tools and inputs that he uses to do this validation.<br/><br/></li>
 								<li class="fragment">The core element of this validation is trusting the issuers of the attributes.</li>
 								<li class="fragment">Verify cryptographically that the issuer(s) signed the attributes/credentials.</li>
 								<li class="fragment">Of course the IRMA software implementation does this for you :)</li> 
@@ -290,6 +287,36 @@
           </aside>
 				</section>
 
+				<!-- 15a -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              IRMA Scheme XML (metadata)
+            </h2>
+          </div>
+          <div class="layer centered">
+            <img src="images/scheme-xml.png" style="height: 900px;"/>
+          </div>
+          <aside class="notes">
+						-
+          </aside>
+				</section>
+
+				<!-- 15b -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Scheme is context for all parties.
+            </h2>
+          </div>
+          <div class="layer centered">
+            <img src="images/irma-schemes-depencencies.png" style="height: 900px;"/>
+          </div>
+          <aside class="notes">
+						-
+          </aside>
+				</section>
+
 				<!-- 16 -->
         <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
           <div class="layer">
@@ -301,10 +328,7 @@
 						<div class="panel" style="left: 400px; top: 400px;">
 							<ul>
 								<li class="fragment">Current implementation as a signed file structure (on Github).</li>
-								<li class="fragment">Scheme manager manages all parts of the scheme.</li>
-							</ul>
-							<br /><br />
-							<ul>
+								<li class="fragment">Scheme manager manages all parts of the scheme.<br/><br/></li>
 								<li class="fragment">Good for standardization.</li>
 								<li class="fragment">Relatively inflexible.</li>
 								<li class="fragment">Are improvements possible?</li>
@@ -353,7 +377,8 @@
           <div class="layer">
 						<div class="panel" style="left: 400px; top: 400px;">
 							<ul>
-								<li class="fragment">For the purpose of this talk:</li>
+								<li>For the purpose of this talk:<br/><br/></li>
+								<li class="fragment">Smart Contracts</li>
 								<li class="fragment">Distributed Ledger Technology</li>
 								<li class="fragment">No single system administrator.</li>
 							</ul>
@@ -366,6 +391,38 @@
           </aside>
 				</section>
 
+				<!-- 23a -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Smart Contracts
+            </h2>
+          </div>
+          <div class="layer centered">
+						<img src="images/smart-contracts.png" style="height: 1400px;"/>
+						<!-- https://www.draglet.com/blockchain-services/smart-contracts/use-cases/ -->
+          </div>
+          <aside class="notes">
+						-
+          </aside>
+				</section>
+
+				<!-- 23a -->
+				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
+          <div class="layer">
+            <h2 class="slide-title">
+              Distributed Ledger Technology
+            </h2>
+          </div>
+          <div class="layer centered">
+						<img src="images/contract-vs-infrastructure.png" style="height: 1200px;"/>
+						<!-- https://wwwmatthes.in.tum.de/pages/djh1ws6a8dwz/Smart-Contracts-and-Blockchain-Technology -->
+          </div>
+          <aside class="notes">
+						-
+          </aside>
+				</section>
+				
 				<!-- 23 -->
 				<section data-background-image="images/background-nebmrd.png" data-background-size="contain">
           <div class="layer">
@@ -377,14 +434,9 @@
 						<div class="panel" style="left: 400px; top: 400px;">
 							<ul>
 								<li class="fragment">They started out really naive.</li>
-								<li class="fragment">Storing attributes (= personal data) on Blockchain?</li>
+								<li class="fragment">Storing wallet (= personal data / attributes) on Blockchain?</li>
 								<li class="fragment">Store private (non-public) data on Blockchain?</li>
 								<li class="fragment">Gravest mistake: storing re-usable identifiers such as (a public version of) the master key on blockchain!</li>
-							</ul>
-							<br /><br />
-							<ul>
-								<li class="fragment">Developments are going fast.</li>
-								<li class="fragment">Soverin is implementing a kind of Attribute Based Credentials (AnonCreds)</li>
 							</ul>
 						</div>
           </div>
@@ -404,9 +456,11 @@
 						<div class="panel" style="left: 400px; top: 400px;">
 							<ul>
 								<li class="fragment">Linkability in case of repeated use of identifiers (which is generally the case).</li>
-								<li class="fragment">No dataminimalism (GDPR)</li>
+								<li class="fragment">No dataminimalization (GDPR)</li>
 								<li class="fragment">No right to be forgotten (GDPR)</li>
-								<li class="fragment">Complexity / Rookie mistakes</li>
+								<li class="fragment">Complexity / Rookie mistakes<br/><br/></li>
+								<li class="fragment">Developments are going fast.</li>
+								<li class="fragment">Soverin is implementing a kind of Attribute Based Credentials (AnonCreds)</li>
 							</ul>
 						</div>
           </div>
@@ -425,11 +479,8 @@
           <div class="layer">
 						<div class="panel" style="left: 400px; top: 400px;">
 							<ul>
-								<li class="fragment">Only store public data on (public blockchains)</li>
-								<li class="fragment">Luckily the IRMA scheme IS public data!</li>
-							</ul>
-								<br /><br />
-							<ul>
+								<li class="fragment">Only store public data on (public) blockchains.<br/><br/></li>
+								<li class="fragment">Luckily the IRMA scheme IS public data!<br/><br/></li>
 								<li class="fragment">Not trying to do 'IRMA on Blockchain'.</li>
 								<li class="fragment">Better question: are these technologies useful to improve IRMA?</li>
 							</ul>
@@ -450,10 +501,10 @@
           <div class="layer">
 						<div class="panel" style="left: 400px; top: 400px;">
 							<ul>
-								<li class="fragment">It works!</li>
+								<li class="fragment">Experimental implementation on Ethereum.</li>
 								<li class="fragment">As close to original implementation as possible.</li>
 								<li class="fragment">IRMA Scheme represented as a smart contract.</li>
-								<li class="fragment">Experimental implementation.</li>
+								<li class="fragment">It works!</li>
 								<li class="fragment">
 									Available on Github - <a href="https://github.com/timenolthof/irmaethereumscheme">https://github.com/timenolthof/irmaethereumscheme</a>
 								</li>
@@ -536,10 +587,16 @@
 						<div class="panel" style="left: 400px; top: 400px;">
 							<ul>
 								<li class="fragment">Issuers can manage their own metadata.</li>
-								<li class="fragment">Issuers can manage their own key (rotation).</li>
+								<li class="fragment">Issuers can manage their own credential specifications.</li>
+								<li class="fragment">Issuers can manage their own keys (and key rotation).<br/><br/></li>
 								<li class="fragment">A lot less work for the scheme.</li>								
 								<li class="fragment">Scheme data structure can become more dynamic when using multiple smart contracts.</li>
-								<li class="fragment">Schemes can support possible new features like 'web of trust'.</li>
+								<li class="fragment">Schemes can support possible new features like
+									<ul style="font-size: 100%; margin-left: 200px;">
+										<li>Users becoming issuers themselves</li>
+										<li>'web of trust'</li>
+									</ul>
+								</li>
 							</ul>
 						</div>
           </div>
@@ -581,9 +638,10 @@
           <div class="layer">
 						<div class="panel" style="left: 400px; top: 400px;">
 							<ul>
-								<li class="fragment">Ethereum is too limited, monitor other suitable technologies</li>
+								<li class="fragment">Ethereum is too limited, look for other suitable technologies</li>
 								<li class="fragment">IPFS (or variants) might be a candidate.</li>
 								<li class="fragment">Research other ways to decentralize schemes as well.</li>
+								<li class="fragment">Would love to hear your input!</li>
 							</ul>
 						</div>
           </div>
@@ -631,19 +689,21 @@
         <section data-background-image="images/background-nebmrd.png" data-background-size="contain">
           <div class="layer">
             <h2 class="slide-title">
-              Image/video sources
+              Image/video sources / references
             </h2>
 					</div>
 					<div class="layer">
 							<div class="panel" style="left: 400px; top: 400px;">
 								<ul>
+									<li>https://privacybydesign.foundation</li>
 									<li>https://news.bitcoin.com/wp-content/uploads/2016/02/BCinfo.jpg</li>
 									<li>https://www.intheblack.com/articles/2018/03/22/blockchain-future-record-keeping</li>
 									<li>https://www.youtube.com/watch?v=98eAygGLoWI</li>
 									<li>https://www.intheblack.com/articles/2018/03/22/blockchain-future-record-keeping</li>
 									<li>https://giphy.com/gifs/news-QZPhk0XqBpdbq</li>
 									<li>https://thenextweb.com/contributors/2017/11/09/how-blockchain-will-change-major-industries/</li>
-									<li>https://privacybydesign.foundation</li>
+									<li>https://www.draglet.com/blockchain-services/smart-contracts/use-cases/</li>
+									<li>https://wwwmatthes.in.tum.de/pages/djh1ws6a8dwz/Smart-Contracts-and-Blockchain-Technology</li>
 								</ul>
 							</div>
 						</div>
